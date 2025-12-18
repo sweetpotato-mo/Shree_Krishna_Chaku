@@ -1,4 +1,9 @@
 /**
+ * Base path for GitHub Pages
+ */
+const BASE_PATH = '/Shree_Krishna_Chaku';
+
+/**
  * Get asset path - works for both development and production
  * Next.js automatically handles basePath for Image components,
  * but for video and CSS background images, we need to handle it manually
@@ -7,28 +12,28 @@ export function getAssetPath(path: string): string {
   // Ensure path starts with /
   const cleanPath = path.startsWith('/') ? path : `/${path}`;
   
-  // For development (localhost), always return path as-is
-  // For production (GitHub Pages), we'll detect and add basePath on client-side
-  if (typeof window === 'undefined') {
-    // Server-side: return path as-is (Next.js will handle basePath in production builds)
-    return cleanPath;
+  // Client-side: check if we're on GitHub Pages
+  if (typeof window !== 'undefined') {
+    const hostname = window.location.hostname;
+    
+    // Always return path as-is for localhost
+    if (hostname === 'localhost' || hostname === '127.0.0.1') {
+      return cleanPath;
+    }
+    
+    // For GitHub Pages (github.io domain), always add basePath
+    if (hostname.includes('github.io')) {
+      return `${BASE_PATH}${cleanPath}`;
+    }
   }
   
-  // Client-side: check environment
-  const hostname = window.location.hostname;
-  const pathname = window.location.pathname;
-  
-  // Always return path as-is for localhost
-  if (hostname === 'localhost' || hostname === '127.0.0.1') {
-    return cleanPath;
+  // Server-side or during build: for production builds, add basePath
+  // This ensures static export includes the correct paths
+  if (typeof process !== 'undefined' && process.env.NODE_ENV === 'production') {
+    return `${BASE_PATH}${cleanPath}`;
   }
   
-  // For GitHub Pages (github.io domain), check if pathname includes basePath
-  if (hostname.includes('github.io') && pathname.includes('/Shree_Krishna_Chaku')) {
-    return `/Shree_Krishna_Chaku${cleanPath}`;
-  }
-  
-  // Default: return path as-is
+  // Default: return path as-is (for dev server)
   return cleanPath;
 }
 
