@@ -59,7 +59,7 @@ const TokhaChronicles: React.FC = () => {
             </h2>
           </div>
           <p className="text-lg text-masi-black/80 max-w-2xl mx-auto">
-            Stories, traditions, and wisdom from the heart of Tokha's Chaku heritage.
+            Stories, traditions, and wisdom from the heart of Tokha&apos;s Chaku heritage.
           </p>
         </div>
 

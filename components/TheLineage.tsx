@@ -31,7 +31,7 @@ const TheLineage: React.FC = () => {
             </h2>
             <div className="space-y-4 text-lg text-masi-black leading-relaxed">
               <p>
-                Since 2063 B.S., Shree Krishna Chaku Production has been a cornerstone of Tokha's 
+                Since 2063 B.S., Shree Krishna Chaku Production has been a cornerstone of Tokha&apos;s 
                 artisanal heritage. For four generations, our family has dedicated itself to preserving 
                 the traditional methods of Chaku making, passed down through the ages.
               </p>
@@ -50,7 +50,7 @@ const TheLineage: React.FC = () => {
             </div>
             <div className="pt-4 border-t-2 border-hyangu-red/30">
               <p className="text-antique-gold font-semibold text-xl">
-                "Preserving Tokha's legacy, generation after generation."
+                &quot;Preserving Tokha&apos;s legacy, generation after generation.&quot;
               </p>
             </div>
           </div>

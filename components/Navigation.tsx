@@ -45,18 +45,18 @@ const Navigation: React.FC = () => {
             onClick={scrollToTop}
             className="flex items-center gap-3 focus:outline-none flex-shrink-0"
           >
-            {/* Logo - styled to match dark header */}
-            <div className="relative h-10 sm:h-12 md:h-14 w-auto">
+            {/* Logo with mix-blend-mode for transparent background */}
+            <div
+              className="relative h-10 sm:h-12 md:h-14 w-auto"
+              style={{ mixBlendMode: "multiply" }}
+            >
               <Image
                 src="/LOGO_Colored.jpeg"
                 alt="Shree Krishna Tokha Chaku"
                 width={56}
                 height={56}
-                className="h-full w-auto object-contain brightness-110 contrast-105"
+                className="h-full w-auto object-contain"
                 priority
-                style={{
-                  filter: "brightness(1.1) contrast(1.05)",
-                }}
               />
             </div>
             {/* Brand Text in Antique Gold */}

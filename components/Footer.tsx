@@ -118,7 +118,7 @@ const Footer: React.FC = () => {
         {/* Signature */}
         <div className="border-t border-parchment/20 pt-8 text-center">
           <p className="heading-serif text-xl text-antique-gold mb-2">
-            Preserving Tokha's heritage, one batch at a time.
+            Preserving Tokha&apos;s heritage, one batch at a time.
           </p>
           <p className="text-parchment/60 text-sm">
             © {new Date().getFullYear()} Shree Krishna Chaku Production Pvt. Ltd. All rights reserved.

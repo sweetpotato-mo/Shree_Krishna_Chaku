@@ -107,7 +107,7 @@ const ProductShowcase: React.FC = () => {
         {/* Inquiry Form Section - Partner with Heritage */}
         <div className="mt-12 p-10 glassmorphism rounded-xl border border-antique-gold/30 text-center shadow-2xl">
           <h3 className="text-3xl font-serif font-bold text-parchment mb-3 heading-serif">
-            Partner with Tokha's Legacy
+            Partner with Tokha&apos;s Legacy
           </h3>
           <p className="text-parchment/70 mb-8 max-w-2xl mx-auto text-lg leading-relaxed">
             Whether you are a local retailer, an international exporter, or planning a grand celebration, 

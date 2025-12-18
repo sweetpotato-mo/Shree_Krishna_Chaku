@@ -36,7 +36,7 @@ const Hero: React.FC = () => {
       <div className="relative z-10 h-full flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-5xl mx-auto">
           <h1 className="heading-serif text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl text-parchment mb-6 leading-tight">
-            Tokha's Heritage,
+            Tokha&apos;s Heritage,
             <br />
             <span className="text-antique-gold">Refined Over Four Generations</span>
           </h1>
