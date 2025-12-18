@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Favicon } from "@/components/Favicon";
 
 export const metadata: Metadata = {
   title:
@@ -19,7 +20,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Favicon />
+        {children}
+      </body>
     </html>
   );
 }

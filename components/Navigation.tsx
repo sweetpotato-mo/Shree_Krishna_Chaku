@@ -3,6 +3,7 @@
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import { getAssetPath } from "@/lib/utils";
 
 const Navigation: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -48,7 +49,7 @@ const Navigation: React.FC = () => {
             {/* Logo - enhanced visibility on dark background */}
             <div className="relative h-10 sm:h-12 md:h-14 w-auto">
               <Image
-                src="/LOGO_Colored.jpeg"
+                src={getAssetPath("/LOGO_Colored.jpeg")}
                 alt="Shree Krishna Tokha Chaku"
                 width={56}
                 height={56}
