@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title:
     "Shree Krishna Chaku | Tokha's Heritage, Refined Over Four Generations",
   description:
-    "A 4th-generation artisanal Chaku production from Tokha-3, Deuko, Kathmandu. Traditionally crafted, SO2 free, no added colors or preservatives.",
+    "A 4th-generation artisanal Chaku production from Tokha-3, Dekwo, Kathmandu. Traditionally crafted, SO2 free, no added colors or preservatives.",
   icons: {
     icon: "/LOGO_White.png",
     apple: "/LOGO_White.png",

@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
             </div>
             <div className="space-y-2 text-parchment/80">
               <p className="text-base sm:text-lg font-semibold">Shree Krishna Chaku Production Pvt. Ltd.</p>
-              <p>Tokha-3, Deuko</p>
+              <p>Tokha-3, Dekwo</p>
               <p>Kathmandu, Nepal</p>
             </div>
             <a

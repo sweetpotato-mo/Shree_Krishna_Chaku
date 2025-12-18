@@ -1,6 +1,6 @@
 # Shree Krishna Chaku - Heritage Landing Page
 
-A premium, story-first landing page for Shree Krishna Chaku Production Pvt. Ltd., a 4th-generation artisanal brand from Tokha-3, Deuko, Kathmandu.
+A premium, story-first landing page for Shree Krishna Chaku Production Pvt. Ltd., a 4th-generation artisanal brand from Tokha-3, Dekwo, Kathmandu.
 
 ## 🎨 Design Philosophy
 
@@ -106,7 +106,7 @@ The following assets need to be added to the `public/` directory:
 ## 📞 Contact Information
 
 - **Phone**: 01-5110124
-- **Location**: Tokha-3, Deuko, Kathmandu
+- **Location**: Tokha-3, Dekwo, Kathmandu
 - **Member**: Tokha Traditional Chaku Protection Society
 
 ## 🏗️ Build for Production

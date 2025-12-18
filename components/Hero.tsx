@@ -120,7 +120,7 @@ const Hero: React.FC = () => {
           </h1>
 
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-parchment/90 mb-12 font-light">
-            A 4th-generation artisanal tradition from Tokha-3, Deuko, Kathmandu
+            A 4th-generation artisanal tradition from Tokha-3, Dekwo, Kathmandu
           </p>
 
           <button

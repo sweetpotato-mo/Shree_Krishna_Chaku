@@ -22,7 +22,7 @@ const TheLineage: React.FC = () => {
             </div>
             <div className="absolute inset-0 bg-gradient-to-t from-masi-black/50 via-transparent to-transparent" />
             <div className="absolute bottom-6 left-6 text-parchment">
-              <p className="text-sm opacity-90">Tokha-3, Deuko, Kathmandu</p>
+              <p className="text-sm opacity-90">Tokha-3, Dekwo, Kathmandu</p>
             </div>
           </div>
 
@@ -39,7 +39,7 @@ const TheLineage: React.FC = () => {
                 passed down through the ages.
               </p>
               <p>
-                Our journey began in the heart of Tokha-3, Deuko, where the rhythm of the Gajur (wooden hook) 
+                Our journey began in the heart of Tokha-3, Dekwo, where the rhythm of the Gajur (wooden hook) 
                 and the slow, deliberate process of Taneko (pulling) Chaku became synonymous with our name. 
                 Each batch is crafted with the same care and attention that our ancestors brought to 
                 this sacred art.
