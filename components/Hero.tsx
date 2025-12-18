@@ -1,36 +1,111 @@
-'use client'
+"use client";
 
-import React from 'react'
-import { ChevronDown } from 'lucide-react'
-import { getAssetPath } from '@/lib/utils'
+import { getAssetPath } from "@/lib/utils";
+import { ChevronDown } from "lucide-react";
+import React, { useEffect, useRef, useState } from "react";
 
 const Hero: React.FC = () => {
-  const scrollToNext = () => {
-    const element = document.getElementById('lineage')
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [videoSrc, setVideoSrc] = useState<string>("/chaku-pulling.mp4");
+
+  useEffect(() => {
+    // Set video source based on environment
+    setVideoSrc(getAssetPath("/chaku-pulling.mp4"));
+  }, []);
+
+  useEffect(() => {
+    // Ensure video plays on mobile devices
+    const video = videoRef.current;
+    if (video) {
+      // Handle video errors
+      const handleError = (e: Event) => {
+        console.error("Video error:", e);
+        const videoElement = e.target as HTMLVideoElement;
+        if (videoElement.error) {
+          console.error("Video error code:", videoElement.error.code);
+          console.error("Video error message:", videoElement.error.message);
+        }
+      };
+
+      // Try to play immediately
+      const playPromise = video.play();
+      if (playPromise) {
+        playPromise.catch((error) => {
+          console.log("Video autoplay prevented:", error);
+        });
+      }
+
+      // Also try to play when video data is loaded (helps on mobile)
+      const handleLoadedData = () => {
+        if (video) {
+          video.play().catch(() => {
+            // Silently fail if autoplay is blocked
+          });
+        }
+      };
+
+      // Handle when video can start playing
+      const handleCanPlay = () => {
+        if (video) {
+          video.play().catch(() => {
+            // Silently fail if autoplay is blocked
+          });
+        }
+      };
+
+      video.addEventListener("loadeddata", handleLoadedData);
+      video.addEventListener("canplay", handleCanPlay);
+      video.addEventListener("error", handleError);
+
+      return () => {
+        video.removeEventListener("loadeddata", handleLoadedData);
+        video.removeEventListener("canplay", handleCanPlay);
+        video.removeEventListener("error", handleError);
+      };
     }
-  }
+  }, []);
+
+  const scrollToNext = () => {
+    const element = document.getElementById("lineage");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <section className="relative h-screen w-full overflow-hidden">
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <video
+          ref={videoRef}
+          src={videoSrc}
           autoPlay
           loop
           muted
           playsInline
-          className="w-full h-full object-cover"
-          style={{ 
-            filter: 'brightness(0.75) contrast(1.1) sepia(0.1)',
-            backdropFilter: 'blur(8px)'
+          preload="auto"
+          className="w-full h-full object-cover relative z-0"
+          style={{
+            filter: "brightness(0.75) contrast(1.1) sepia(0.1)",
+          }}
+          onError={(e) => {
+            console.error("Video failed to load:", e);
+            const videoElement = e.currentTarget;
+            if (videoElement.error) {
+              console.error("Video error code:", videoElement.error.code);
+              console.error("Video error message:", videoElement.error.message);
+            }
+          }}
+          onLoadedMetadata={() => {
+            console.log("Video metadata loaded, source:", videoSrc);
           }}
         >
-          <source src={getAssetPath('/chaku-pulling.mp4')} type="video/mp4" />
-          <div className="w-full h-full bg-gradient-to-br from-masi-black via-hyangu-red to-masi-black" />
+          Your browser does not support the video tag.
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-masi-black/40 via-transparent to-parchment/60" />
+        {/* Fallback gradient background for when video doesn't load - behind video */}
+        <div className="absolute inset-0 bg-gradient-to-br from-masi-black via-hyangu-red to-masi-black -z-10" />
+        {/* Overlay gradient on top of video for visual effect */}
+        <div className="absolute inset-0 bg-gradient-to-b from-masi-black/40 via-transparent to-parchment/60 z-[1]" />
       </div>
 
       {/* Content */}
@@ -39,7 +114,9 @@ const Hero: React.FC = () => {
           <h1 className="heading-serif text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl text-parchment mb-6 leading-tight">
             Tokha&apos;s Heritage,
             <br />
-            <span className="text-antique-gold">Refined Over Four Generations</span>
+            <span className="text-antique-gold">
+              Refined Over Four Generations
+            </span>
           </h1>
 
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-parchment/90 mb-12 font-light">
@@ -65,7 +142,7 @@ const Hero: React.FC = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

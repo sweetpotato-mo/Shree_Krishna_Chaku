@@ -38,7 +38,9 @@ const Navigation: React.FC = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-masi-black border-b-[3px] border-hyangu-red">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-masi-black border-b-[2px] border-hyangu-red relative">
+      {/* Dual border: 2px red + 1px black (Masi-Hyangu) */}
+      <div className="absolute -bottom-[1px] left-0 right-0 h-[1px] bg-masi-black"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Horizontal Logo Lockup */}
@@ -63,7 +65,7 @@ const Navigation: React.FC = () => {
             {/* Brand Text in Antique Gold - visible on all screens, wraps on mobile */}
             <span className="heading-serif text-xs sm:text-lg md:text-xl lg:text-2xl text-antique-gold leading-tight">
               <span className="block sm:inline">Shree Krishna</span>
-              <span className="block sm:inline">Tokha Chaku</span>
+              <span className="block sm:inline sm:ml-1">Tokha Chaku</span>
             </span>
           </button>
 

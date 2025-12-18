@@ -33,9 +33,10 @@ const TheLineage: React.FC = () => {
             </h2>
             <div className="space-y-4 text-lg text-masi-black leading-relaxed">
               <p>
-                Since 2063 B.S., Shree Krishna Chaku Production has been a cornerstone of Tokha&apos;s 
-                artisanal heritage. For four generations, our family has dedicated itself to preserving 
-                the traditional methods of Chaku making, passed down through the ages.
+                Rooted in a four-generation family craft and officially registered in 2063 B.S., 
+                Shree Krishna Chaku Production is a protector of Tokha&apos;s ancestral taste. 
+                Our family has dedicated itself to preserving the traditional methods of Chaku making, 
+                passed down through the ages.
               </p>
               <p>
                 Our journey began in the heart of Tokha-3, Deuko, where the rhythm of the Gajur (wooden hook) 

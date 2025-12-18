@@ -46,8 +46,8 @@ const products: Product[] = [
     name: "Sutkeri Chaku",
     nameNe: "सुत्केरी चाकु",
     description:
-      "A special blend with ginger, perfect for traditional celebrations.",
-    descriptionNe: "अदुवासँगको विशेष मिश्रण, परम्परागत उत्सवहरूको लागि उत्तम।",
+      "A restorative blend with ginger, fenugreek, and traditional herbs, crafted specifically for maternal health and strength.",
+    descriptionNe: "अदुवा, मेथी, र परम्परागत जडिबुटीको पुनर्स्थापनात्मक मिश्रण, मातृ स्वास्थ्य र शक्तिको लागि विशेष रूपमा बनाइएको।",
     image: "/sutkeri-chaku.jpg",
     color: "from-masi-black/10 to-masi-black/5",
   },
@@ -106,11 +106,11 @@ const ProductShowcase: React.FC = () => {
         </div>
 
         {/* Inquiry Form Section - Partner with Heritage */}
-        <div className="mt-12 p-10 glassmorphism rounded-xl border border-antique-gold/30 text-center shadow-2xl">
-          <h3 className="text-3xl font-serif font-bold text-parchment mb-3 heading-serif">
+        <div className="mt-8 sm:mt-12 p-6 sm:p-8 md:p-10 glassmorphism rounded-xl border border-antique-gold/30 text-center shadow-2xl">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-parchment mb-3 sm:mb-4 heading-serif px-2">
             Partner with Tokha&apos;s Legacy
           </h3>
-          <p className="text-parchment/70 mb-8 max-w-2xl mx-auto text-lg leading-relaxed">
+          <p className="text-parchment/70 mb-6 sm:mb-8 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed px-2">
             Whether you are a local retailer, an international exporter, or planning a grand celebration, 
             we invite you to bring the authentic warmth of Shree Krishna Tokha Chaku to your community. 
             Please share your requirements through our official inquiry portal.
@@ -119,9 +119,9 @@ const ProductShowcase: React.FC = () => {
             href="https://docs.google.com/forms/d/e/1FAIpQLSdftlwL_fdx5JvlY_ESCHmx3pDvDL-j8FTexv1vxM_HAr9eGQ/viewform?usp=sharing&ouid=108440557764622866401"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-16 py-5 bg-antique-gold text-masi-black font-bold uppercase tracking-[0.2em] rounded-full border-2 border-antique-gold shadow-[0_0_20px_rgba(212,175,55,0.3)] transition-all duration-500 hover:bg-antique-gold/90 hover:scale-105 hover:shadow-[0_0_30px_rgba(212,175,55,0.5)]"
+            className="inline-flex items-center justify-center px-6 sm:px-12 md:px-16 py-3 sm:py-4 md:py-5 bg-antique-gold text-masi-black font-bold uppercase tracking-wide sm:tracking-[0.15em] md:tracking-[0.2em] rounded-full border-2 border-antique-gold shadow-[0_0_20px_rgba(212,175,55,0.3)] transition-all duration-500 hover:bg-antique-gold/90 hover:scale-105 hover:shadow-[0_0_30px_rgba(212,175,55,0.5)] text-sm sm:text-base md:text-lg whitespace-nowrap"
           >
-            Open Inquiry Form
+            Open Order/ Inquiry Form
           </a>
         </div>
 
