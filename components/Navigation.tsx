@@ -1,9 +1,9 @@
 "use client";
 
+import { getAssetPath } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import { getAssetPath } from "@/lib/utils";
 
 const Navigation: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -60,9 +60,10 @@ const Navigation: React.FC = () => {
                 }}
               />
             </div>
-            {/* Brand Text in Antique Gold */}
-            <span className="heading-serif text-lg sm:text-xl md:text-2xl text-antique-gold hidden sm:block">
-              Shree Krishna Tokha Chaku
+            {/* Brand Text in Antique Gold - visible on all screens, wraps on mobile */}
+            <span className="heading-serif text-xs sm:text-lg md:text-xl lg:text-2xl text-antique-gold leading-tight">
+              <span className="block sm:inline">Shree Krishna</span>
+              <span className="block sm:inline">Tokha Chaku</span>
             </span>
           </button>
 
