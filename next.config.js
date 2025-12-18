@@ -1,9 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  output: 'export',
   images: {
-    domains: [],
+    unoptimized: true,
   },
+  basePath: '/Shree_Krishna_Chaku',
+  trailingSlash: true,
 };
 
 module.exports = nextConfig;
