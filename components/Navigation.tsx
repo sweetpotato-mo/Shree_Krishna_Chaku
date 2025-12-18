@@ -6,17 +6,8 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
 const Navigation: React.FC = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [language, setLanguage] = useState<"en" | "ne">("en");
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const navItems = [
     { en: "Our Story", ne: "हाम्रो कथा", id: "lineage" },
@@ -38,7 +29,7 @@ const Navigation: React.FC = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-masi-black border-b-[2px] border-hyangu-red relative">
+    <nav className="fixed top-0 left-0 right-0 z-[100] bg-masi-black border-b-[2px] border-hyangu-red relative shadow-lg">
       {/* Dual border: 2px red + 1px black (Masi-Hyangu) */}
       <div className="absolute -bottom-[1px] left-0 right-0 h-[1px] bg-masi-black"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
