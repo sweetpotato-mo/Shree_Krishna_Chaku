@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { getAssetPath } from "@/lib/utils";
 
 interface Product {
   name: string;
@@ -76,7 +77,7 @@ const ProductShowcase: React.FC = () => {
               <div className="relative h-64 bg-gradient-to-br from-masi-black via-hyangu-red/20 to-masi-black overflow-hidden">
                 <div 
                   className="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-500" 
-                  style={{ backgroundImage: `url(${product.image || '/placeholder-chaku.jpg'})` }}
+                  style={{ backgroundImage: `url(${getAssetPath(product.image || '/placeholder-chaku.jpg')})` }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-masi-black/60 via-transparent to-transparent" />
               </div>

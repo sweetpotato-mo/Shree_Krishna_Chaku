@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import { getAssetPath } from '@/lib/utils'
 
 const TheLineage: React.FC = () => {
   return (
@@ -11,8 +12,9 @@ const TheLineage: React.FC = () => {
           <div className="relative h-[400px] md:h-[550px] overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-masi-black via-hyangu-red/20 to-masi-black">
               <div 
-                className="w-full h-full bg-[url('/factory-tokha.jpg')] bg-cover bg-center" 
+                className="w-full h-full bg-cover bg-center"
                 style={{ 
+                  backgroundImage: `url(${getAssetPath('/factory-tokha.jpg')})`,
                   filter: 'sepia(0.1) contrast(1.1) brightness(0.95)',
                   backdropFilter: 'blur(8px)'
                 }} 

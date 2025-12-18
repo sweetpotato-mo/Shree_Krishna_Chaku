@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { ChevronDown } from 'lucide-react'
+import { getAssetPath } from '@/lib/utils'
 
 const Hero: React.FC = () => {
   const scrollToNext = () => {
@@ -26,7 +27,7 @@ const Hero: React.FC = () => {
             backdropFilter: 'blur(8px)'
           }}
         >
-          <source src="/chaku-pulling.mp4" type="video/mp4" />
+          <source src={getAssetPath('/chaku-pulling.mp4')} type="video/mp4" />
           <div className="w-full h-full bg-gradient-to-br from-masi-black via-hyangu-red to-masi-black" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-masi-black/40 via-transparent to-parchment/60" />
