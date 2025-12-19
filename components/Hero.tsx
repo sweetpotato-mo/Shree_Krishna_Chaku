@@ -7,6 +7,23 @@ import React, { useEffect, useRef, useState } from "react";
 const Hero: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [videoSrc, setVideoSrc] = useState<string>("/chaku-pulling.mp4");
+  const [isMobile, setIsMobile] = useState(false);
+  const [showFallback, setShowFallback] = useState(false);
+
+  useEffect(() => {
+    // Detect mobile device
+    const checkMobile = () => {
+      const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      ) || window.innerWidth < 768;
+      setIsMobile(isMobileDevice);
+      setShowFallback(isMobileDevice);
+    };
+    
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   useEffect(() => {
     // Set video source based on environment
@@ -76,32 +93,49 @@ const Hero: React.FC = () => {
     <section className="relative h-screen w-full overflow-hidden">
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
-        <video
-          ref={videoRef}
-          src={videoSrc}
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          className="w-full h-full object-cover relative z-0"
-          style={{
-            filter: "brightness(0.75) contrast(1.1) sepia(0.1)",
-          }}
-          onError={(e) => {
-            console.error("Video failed to load:", e);
-            const videoElement = e.currentTarget;
-            if (videoElement.error) {
-              console.error("Video error code:", videoElement.error.code);
-              console.error("Video error message:", videoElement.error.message);
-            }
-          }}
-          onLoadedMetadata={() => {
-            console.log("Video metadata loaded, source:", videoSrc);
-          }}
-        >
-          Your browser does not support the video tag.
-        </video>
+        {/* Fallback image for mobile or when video fails */}
+        {showFallback ? (
+          <div
+            className="w-full h-full object-cover relative z-0"
+            style={{
+              backgroundImage: `url(${getAssetPath("/factory-tokha.jpg")})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              filter: "brightness(0.75) contrast(1.1) sepia(0.1)",
+            }}
+          />
+        ) : (
+          <video
+            ref={videoRef}
+            src={videoSrc}
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            webkit-playsinline="true"
+            x-webkit-airplay="allow"
+            className="w-full h-full object-cover relative z-0"
+            style={{
+              filter: "brightness(0.75) contrast(1.1) sepia(0.1)",
+            }}
+            onError={(e) => {
+              console.error("Video failed to load:", e);
+              const videoElement = e.currentTarget;
+              if (videoElement.error) {
+                console.error("Video error code:", videoElement.error.code);
+                console.error("Video error message:", videoElement.error.message);
+              }
+              // Show fallback image on error
+              setShowFallback(true);
+            }}
+            onLoadedMetadata={() => {
+              console.log("Video metadata loaded, source:", videoSrc);
+            }}
+          >
+            Your browser does not support the video tag.
+          </video>
+        )}
         {/* Fallback gradient background for when video doesn't load - behind video */}
         <div className="absolute inset-0 bg-gradient-to-br from-masi-black via-hyangu-red to-masi-black -z-10" />
         {/* Overlay gradient on top of video for visual effect */}
