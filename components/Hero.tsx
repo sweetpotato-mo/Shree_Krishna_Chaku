@@ -13,13 +13,14 @@ const Hero: React.FC = () => {
   useEffect(() => {
     // Detect mobile device
     const checkMobile = () => {
-      const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-        navigator.userAgent
-      ) || window.innerWidth < 768;
+      const isMobileDevice =
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent
+        ) || window.innerWidth < 768;
       setIsMobile(isMobileDevice);
       setShowFallback(isMobileDevice);
     };
-    
+
     checkMobile();
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
@@ -124,7 +125,10 @@ const Hero: React.FC = () => {
               const videoElement = e.currentTarget;
               if (videoElement.error) {
                 console.error("Video error code:", videoElement.error.code);
-                console.error("Video error message:", videoElement.error.message);
+                console.error(
+                  "Video error message:",
+                  videoElement.error.message
+                );
               }
               // Show fallback image on error
               setShowFallback(true);

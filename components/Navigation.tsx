@@ -29,9 +29,12 @@ const Navigation: React.FC = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-[100] bg-masi-black border-b-[2px] border-hyangu-red relative shadow-lg will-change-transform" style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100 }}>
-      {/* Dual border: 2px red + 1px black (Masi-Hyangu) */}
-      <div className="absolute -bottom-[1px] left-0 right-0 h-[1px] bg-masi-black"></div>
+    <nav
+      className="fixed top-0 left-0 right-0 z-[100] bg-masi-black relative shadow-lg will-change-transform"
+      style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100 }}
+    >
+      {/* Simple red border - thicker */}
+      <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-hyangu-red"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Horizontal Logo Lockup */}
