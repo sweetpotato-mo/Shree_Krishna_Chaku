@@ -49,9 +49,14 @@ const TheLineage: React.FC = () => {
               </p>
               <p>
                 As proud members of the{" "}
-                <span className="font-semibold text-hyangu-red">
+                <a
+                  href="https://english.onlinekhabar.com/tokha-bazaar-gears-up-for-maghe-sankranti-to-fulfill-demand-for-chaku.html#:~:text=The%20Chaku%20produced%20here%20is,various%20countries%20around%20the%20world."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-masi-black border-b border-masi-black/30 hover:text-hyangu-red hover:border-hyangu-red/70 transition-all duration-300 ease-in-out"
+                >
                   Tokha Traditional Chaku Conservation Society
-                </span>
+                </a>
                 , we are committed to maintaining the purity and authenticity of
                 this time-honored tradition. Our Chaku is SO2 free, with no
                 added colors or preservatives— just pure, traditional
