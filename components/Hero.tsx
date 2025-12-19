@@ -99,20 +99,20 @@ const Hero: React.FC = () => {
           <div
             className="w-full h-full object-cover relative z-0"
             style={{
-              backgroundImage: `url(${getAssetPath("/factory-tokha.jpg")})`,
+              backgroundImage: `url(${getAssetPath("/chaku-pulling.png")})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               filter: "brightness(0.75) contrast(1.1) sepia(0.1)",
             }}
           />
         ) : (
-          <video
+        <video
             ref={videoRef}
             src={videoSrc}
-            autoPlay
-            loop
-            muted
-            playsInline
+          autoPlay
+          loop
+          muted
+          playsInline
             preload="auto"
             webkit-playsinline="true"
             x-webkit-airplay="allow"
@@ -138,7 +138,7 @@ const Hero: React.FC = () => {
             }}
           >
             Your browser does not support the video tag.
-          </video>
+        </video>
         )}
         {/* Fallback gradient background for when video doesn't load - behind video */}
         <div className="absolute inset-0 bg-gradient-to-br from-masi-black via-hyangu-red to-masi-black -z-10" />
@@ -177,7 +177,7 @@ const Hero: React.FC = () => {
           >
             <ChevronDown size={32} />
           </button>
-        </div>
+      </div>
       </div>
     </section>
   );

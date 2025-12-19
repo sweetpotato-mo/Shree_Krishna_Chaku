@@ -1,6 +1,7 @@
 "use client";
 
 import { getAssetPath } from "@/lib/utils";
+import { motion } from "framer-motion";
 import React from "react";
 
 const TheLineage: React.FC = () => {
@@ -63,6 +64,35 @@ const TheLineage: React.FC = () => {
                 generation.&quot;
               </p>
             </div>
+            {/* Digital Archive Notice */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              className="pt-6 mt-6 border-t border-hyangu-red/10"
+            >
+              {/* Quill Icon */}
+              <div className="flex justify-center mb-3">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#D4AF37"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="opacity-75"
+                >
+                  <path d="M12 20h9" />
+                  <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+                </svg>
+              </div>
+              <p className="heading-serif text-masi-black/60 text-sm italic leading-relaxed text-center">
+                The complete story of Tokha, the heritage of Chaku, and the legacy of Shree Krishna Chaku will be unveiled here soon.
+              </p>
+            </motion.div>
           </div>
         </div>
       </div>

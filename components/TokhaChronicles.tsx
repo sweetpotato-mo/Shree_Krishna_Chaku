@@ -107,6 +107,49 @@ const TokhaChronicles: React.FC = () => {
             </article>
           ))}
         </div>
+
+        {/* Archive Announcement Card */}
+        <div className="mt-16 md:mt-20">
+          <article className="relative bg-[#F9F6F0] border-4 border-masi-black p-8 md:p-12 max-w-3xl mx-auto">
+            {/* Coming Soon Badge */}
+            <div className="absolute top-4 right-4">
+              <span className="bg-hyangu-red text-parchment text-xs uppercase tracking-wider font-semibold px-3 py-1.5">
+                Coming Soon
+              </span>
+            </div>
+
+            {/* Book Icon */}
+            <div className="flex justify-center mb-6">
+              <svg
+                width="48"
+                height="48"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#D4AF37"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="opacity-90"
+              >
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                <path d="M8 7h8" />
+                <path d="M8 11h8" />
+                <path d="M8 15h6" />
+              </svg>
+            </div>
+
+            {/* Headline */}
+            <h3 className="heading-serif text-2xl md:text-3xl text-masi-black text-center mb-6">
+              Digitizing the Chaku Smarika (2078 B.S.)
+            </h3>
+
+            {/* Body Text */}
+            <p className="text-masi-black/80 leading-relaxed text-base md:text-lg text-center max-w-2xl mx-auto">
+              The wisdom of Tokha is being preserved for the digital age. A curated selection of printed articles from the Chaku Smarika (2078 B.S.) will soon be available here. This collection features deep insights on the history, culture, and future prospects of Tokha and Chaku from influential Newa: personalities who relate to Tokha and the broader Newa: culture.
+            </p>
+          </article>
+        </div>
       </div>
     </section>
   )

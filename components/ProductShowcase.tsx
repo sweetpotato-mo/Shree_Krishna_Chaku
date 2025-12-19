@@ -57,13 +57,12 @@ const ProductShowcase: React.FC = () => {
   return (
     <section id="products" className="relative py-24 md:py-32 bg-parchment">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 pb-12">
           <h2 className="heading-serif text-3xl sm:text-4xl md:text-5xl text-hyangu-red mb-4">
             Our Products
           </h2>
-          <p className="text-lg text-masi-black/80 max-w-2xl mx-auto">
-            Four distinct varieties, each crafted with the same dedication to
-            tradition and purity.
+          <p className="heading-serif text-lg text-masi-black/70 italic max-w-2xl mx-auto">
+            A curated selection of varieties, each crafted with the same dedication to tradition and purity.
           </p>
         </div>
 
@@ -103,6 +102,37 @@ const ProductShowcase: React.FC = () => {
               </div>
             </div>
           ))}
+          
+          {/* Coming Soon Card */}
+          <div className="group relative bg-parchment/40 border-2 border-dashed border-hyangu-red/30 hover:border-hyangu-red/50 transition-all duration-300 overflow-hidden opacity-0 animate-fade-in">
+            {/* Icon Area */}
+            <div className="relative h-64 bg-gradient-to-br from-parchment/60 to-parchment/40 flex items-center justify-center">
+              <svg
+                width="48"
+                height="48"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#D4AF37"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="opacity-70"
+              >
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+            </div>
+
+            {/* Content */}
+            <div className="p-6 space-y-4 text-center">
+              <h3 className="heading-serif text-2xl text-hyangu-red mb-2 italic">
+                The Collection Continues
+              </h3>
+              <p className="text-masi-black/60 text-sm leading-relaxed">
+                A legacy this deep cannot be captured in a single glance. Our full product catalogue is being curated and will be available here soon.
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Inquiry Form Section - Partner with Heritage */}
