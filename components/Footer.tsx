@@ -1,21 +1,28 @@
-'use client'
+"use client";
 
-import React from 'react'
-import { MapPin, Phone, Mail, Facebook, MessageCircle } from 'lucide-react'
+import { Facebook, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import React from "react";
 
 const Footer: React.FC = () => {
   return (
-    <footer id="footer" className="relative bg-masi-black text-parchment py-16 md:py-24">
+    <footer
+      id="footer"
+      className="relative bg-masi-black text-parchment py-16 md:py-24"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-16 md:gap-20 mb-16">
           {/* Left: Map Location */}
           <div className="space-y-6">
             <div className="flex items-center space-x-3 mb-4">
               <MapPin className="text-antique-gold flex-shrink-0" size={20} />
-              <h3 className="heading-serif text-xl sm:text-2xl text-parchment">Visit Us</h3>
+              <h3 className="heading-serif text-xl sm:text-2xl text-parchment">
+                Visit Us
+              </h3>
             </div>
             <div className="space-y-2 text-parchment/80">
-              <p className="text-base sm:text-lg font-semibold">Shree Krishna Chaku Production Pvt. Ltd.</p>
+              <p className="text-base sm:text-lg font-semibold">
+                Shree Krishna Chaku Production Pvt. Ltd.
+              </p>
               <p>Tokha-3, Dekwo</p>
               <p>Kathmandu, Nepal</p>
             </div>
@@ -32,21 +39,29 @@ const Footer: React.FC = () => {
           {/* Right: Contact Details */}
           <div className="space-y-8">
             <div>
-              <h3 className="heading-serif text-xl sm:text-2xl text-parchment mb-6">Contact Us</h3>
+              <h3 className="heading-serif text-xl sm:text-2xl text-parchment mb-6">
+                Contact Us
+              </h3>
               <div className="space-y-4">
                 <div className="flex items-center space-x-4">
-                  <Phone className="text-antique-gold flex-shrink-0" size={18} />
-                  <a 
-                    href="tel:+9779841308823" 
+                  <Phone
+                    className="text-antique-gold flex-shrink-0"
+                    size={18}
+                  />
+                  <a
+                    href="tel:+9779841308823"
                     className="text-parchment/80 hover:text-antique-gold transition-colors duration-200 text-base sm:text-lg break-all"
                   >
                     +977 984-1308823
                   </a>
                 </div>
                 <div className="flex items-center space-x-4">
-                  <Phone className="text-antique-gold flex-shrink-0" size={18} />
-                  <a 
-                    href="tel:+9779851231823" 
+                  <Phone
+                    className="text-antique-gold flex-shrink-0"
+                    size={18}
+                  />
+                  <a
+                    href="tel:+9779851231823"
                     className="text-parchment/80 hover:text-antique-gold transition-colors duration-200 text-base sm:text-lg break-all"
                   >
                     +977 985-1231823
@@ -54,8 +69,8 @@ const Footer: React.FC = () => {
                 </div>
                 <div className="flex items-center space-x-4">
                   <Mail className="text-antique-gold flex-shrink-0" size={18} />
-                  <a 
-                    href="mailto:krishnatokhachaku@gmail.com" 
+                  <a
+                    href="mailto:krishnatokhachaku@gmail.com"
                     className="text-parchment/80 hover:text-antique-gold transition-colors duration-200 text-sm sm:text-base break-all"
                   >
                     krishnatokhachaku@gmail.com
@@ -66,7 +81,9 @@ const Footer: React.FC = () => {
 
             {/* Social Media */}
             <div>
-              <h4 className="text-parchment/90 font-semibold mb-4">Follow Our Journey</h4>
+              <h4 className="text-parchment/90 font-semibold mb-4">
+                Follow Our Journey
+              </h4>
               <div className="flex space-x-4">
                 <a
                   href="https://www.facebook.com/krishna.tokha.chaku.2025"
@@ -75,7 +92,10 @@ const Footer: React.FC = () => {
                   className="w-12 h-12 border-2 border-parchment/30 hover:border-antique-gold flex items-center justify-center transition-colors duration-200"
                   aria-label="Facebook"
                 >
-                  <Facebook className="text-parchment/80 hover:text-antique-gold" size={20} />
+                  <Facebook
+                    className="text-parchment/80 hover:text-antique-gold"
+                    size={20}
+                  />
                 </a>
                 <a
                   href="https://www.tiktok.com/@krishnatokhachaku0"
@@ -100,7 +120,10 @@ const Footer: React.FC = () => {
                   className="w-12 h-12 border-2 border-parchment/30 hover:border-antique-gold flex items-center justify-center transition-colors duration-200"
                   aria-label="WhatsApp"
                 >
-                  <MessageCircle className="text-parchment/80 hover:text-antique-gold" size={20} />
+                  <MessageCircle
+                    className="text-parchment/80 hover:text-antique-gold"
+                    size={20}
+                  />
                 </a>
               </div>
             </div>
@@ -108,8 +131,10 @@ const Footer: React.FC = () => {
             {/* Heritage Statement */}
             <div className="pt-6 border-t border-parchment/20">
               <p className="text-parchment/70 text-sm leading-relaxed">
-                Member of the <span className="text-antique-gold font-semibold">Tokha Traditional 
-                Chaku Conservation Society</span>
+                Member of the{" "}
+                <span className="text-antique-gold font-semibold">
+                  Tokha Traditional Chaku Conservation Society
+                </span>
               </p>
             </div>
           </div>
@@ -121,12 +146,13 @@ const Footer: React.FC = () => {
             Preserving Tokha&apos;s heritage, one batch at a time.
           </p>
           <p className="text-parchment/60 text-sm">
-            © {new Date().getFullYear()} Shree Krishna Chaku Production Pvt. Ltd. All rights reserved.
+            © {new Date().getFullYear()} Shree Krishna Chaku Production Pvt.
+            Ltd. All rights reserved.
           </p>
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

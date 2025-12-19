@@ -1,6 +1,6 @@
+import { Favicon } from "@/components/Favicon";
 import type { Metadata } from "next";
 import "./globals.css";
-import { Favicon } from "@/components/Favicon";
 
 export const metadata: Metadata = {
   title:

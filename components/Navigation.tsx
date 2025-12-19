@@ -3,7 +3,7 @@
 import { getAssetPath } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 const Navigation: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -29,7 +29,7 @@ const Navigation: React.FC = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-[100] bg-masi-black border-b-[2px] border-hyangu-red relative shadow-lg">
+    <nav className="fixed top-0 left-0 right-0 z-[100] bg-masi-black border-b-[2px] border-hyangu-red relative shadow-lg will-change-transform" style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100 }}>
       {/* Dual border: 2px red + 1px black (Masi-Hyangu) */}
       <div className="absolute -bottom-[1px] left-0 right-0 h-[1px] bg-masi-black"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
