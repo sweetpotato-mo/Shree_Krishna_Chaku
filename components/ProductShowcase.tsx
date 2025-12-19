@@ -1,7 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { getAssetPath } from "@/lib/utils";
+import { X } from "lucide-react";
 
 interface Product {
   name: string;
@@ -54,8 +55,50 @@ const products: Product[] = [
 ];
 
 const ProductShowcase: React.FC = () => {
+  const [showToast, setShowToast] = useState(false);
+
+  const handleDiscoverRitual = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    // Show toast notification
+    setShowToast(true);
+    // Scroll to inquiry section
+    const inquirySection = document.getElementById("inquiry-section");
+    if (inquirySection) {
+      inquirySection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
+  // Auto-hide toast after 5 seconds
+  useEffect(() => {
+    if (showToast) {
+      const timer = setTimeout(() => {
+        setShowToast(false);
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [showToast]);
+
   return (
     <section id="products" className="relative py-24 md:py-32 bg-parchment">
+      {/* Toast Notification */}
+      {showToast && (
+        <div className="fixed top-20 right-4 md:right-8 z-[200] animate-slide-in-right">
+          <div className="bg-masi-black text-parchment p-4 md:p-6 rounded-lg shadow-2xl border-2 border-hyangu-red max-w-sm">
+            <div className="flex items-start justify-between gap-4">
+              <p className="text-sm md:text-base leading-relaxed flex-1">
+                The detailed ritual guide for this variety is being curated and is not available yet. In the meantime, feel free to contact us regarding your requirements using the form below.
+              </p>
+              <button
+                onClick={() => setShowToast(false)}
+                className="text-parchment/70 hover:text-parchment transition-colors flex-shrink-0"
+                aria-label="Close notification"
+              >
+                <X size={20} />
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 pb-12">
           <h2 className="heading-serif text-3xl sm:text-4xl md:text-5xl text-hyangu-red mb-4">
@@ -70,7 +113,7 @@ const ProductShowcase: React.FC = () => {
           {products.map((product) => (
             <div
               key={product.name}
-              className="group relative bg-parchment border-2 border-masi-black/10 hover:border-hyangu-red transition-all duration-300 overflow-hidden"
+              className="group relative bg-parchment border-2 border-masi-black/10 hover:border-hyangu-red transition-all duration-300 overflow-hidden flex flex-col"
             >
               {/* Product Image */}
               <div className="relative h-64 bg-gradient-to-br from-masi-black via-hyangu-red/20 to-masi-black overflow-hidden">
@@ -82,7 +125,7 @@ const ProductShowcase: React.FC = () => {
               </div>
 
               {/* Product Info */}
-              <div className="p-6 space-y-4">
+              <div className="p-6 space-y-4 flex flex-col flex-1">
                 <div>
                   <h3 className="heading-serif text-2xl text-hyangu-red mb-1">
                     {product.name}
@@ -91,11 +134,12 @@ const ProductShowcase: React.FC = () => {
                     {product.nameNe}
                   </p>
                 </div>
-                <p className="text-masi-black/80 text-sm leading-relaxed">
+                <p className="text-masi-black/80 text-sm leading-relaxed flex-1">
                   {product.description}
                 </p>
                 <button
-                  className="w-full py-3 border-2 border-hyangu-red text-hyangu-red hover:bg-hyangu-red hover:text-parchment transition-all duration-300 font-semibold text-sm tracking-wide"
+                  onClick={handleDiscoverRitual}
+                  className="w-full py-3 border-2 border-hyangu-red text-hyangu-red hover:bg-hyangu-red hover:text-parchment transition-all duration-300 font-semibold text-sm tracking-wide mt-auto"
                 >
                   Discover the Ritual
                 </button>
@@ -136,7 +180,7 @@ const ProductShowcase: React.FC = () => {
         </div>
 
         {/* Inquiry Form Section - Partner with Heritage */}
-        <div className="mt-8 sm:mt-12 p-6 sm:p-8 md:p-10 glassmorphism rounded-xl border border-antique-gold/30 text-center shadow-2xl">
+        <div id="inquiry-section" className="mt-8 sm:mt-12 p-6 sm:p-8 md:p-10 glassmorphism rounded-xl border border-antique-gold/30 text-center shadow-2xl">
           <h3 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-parchment mb-3 sm:mb-4 heading-serif px-2">
             Partner with Tokha&apos;s Legacy
           </h3>

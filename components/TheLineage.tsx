@@ -42,13 +42,13 @@ const TheLineage: React.FC = () => {
               </p>
               <p>
                 Our journey began in the heart of Tokha-3, Dekwo, where the
-                rhythm of the Gajur (wooden hook) and the slow, deliberate
+                rhythm of the Keela (wooden hook) and the slow, deliberate
                 process of Taneko (pulling) Chaku became synonymous with our
                 name. Each batch is crafted with the same care and attention
                 that our ancestors brought to this sacred art.
               </p>
               <p>
-                As proud members of the{" "}
+                As a proud member of the{" "}
                 <a
                   href="https://english.onlinekhabar.com/tokha-bazaar-gears-up-for-maghe-sankranti-to-fulfill-demand-for-chaku.html#:~:text=The%20Chaku%20produced%20here%20is,various%20countries%20around%20the%20world."
                   target="_blank"

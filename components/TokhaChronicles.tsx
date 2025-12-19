@@ -17,10 +17,10 @@ const chronicles: Chronicle[] = [
     title: "The Secret Rhythm of the Hook",
     titleNe: "गजुुरको गोप्य ताल",
     excerpt:
-      "In the quiet hours of dawn, the Gajur—the stout wooden hook secured into the wall—becomes a metronome of tradition. Each pull (Taneko), each stretch, follows a rhythm passed down through generations—a rhythm that cannot be rushed.",
+      "In the quiet hours of dawn, the Keela—the stout wooden hook secured into the wall—becomes a metronome of tradition. Each pull (Taneko), each stretch, follows a rhythm passed down through generations—a rhythm that cannot be rushed.",
     excerptNe:
       "बिहानको शान्त घण्टाहरूमा, गजुुर—काठको मोटो हुक जुन भित्तामा सुरक्षित छ—परम्पराको मेट्रोनोम बन्छ। प्रत्येक तान्ने (तानेको), प्रत्येक फैलाउने, पुस्ता दर पुस्ता हस्तान्तरित ताल अनुसरण गर्छ—एक ताल जुन हतार गर्न सकिँदैन।",
-    date: "Maghe Sankranti 2080 B.S. (2003 N.S.)",
+    date: "Maghe Sankranti 2080 B.S.",
     category: "Tradition",
   },
   {
@@ -30,7 +30,7 @@ const chronicles: Chronicle[] = [
       "Maghe Sankranti marks the peak of Chaku season in Tokha. The cold winter air, the warmth of the fire, and the communal spirit of making Chaku together—this is when Tokha truly comes alive.",
     excerptNe:
       "माघे सङ्क्रान्तिले टोखामा चाकुको मौसमको चरमोत्कर्षलाई चिन्ह लगाउँछ। चिसो जाडोको हावा, आगोको तातो, र सँगै चाकु बनाउने सामुदायिक भावना—यो टोखा साँच्चै जीवन्त हुने समय हो।",
-    date: "Maghe Sankranti 2080 B.S. (2003 N.S.)",
+    date: "Maghe Sankranti 2080 B.S.",
     category: "Festival",
   },
   {
@@ -40,7 +40,7 @@ const chronicles: Chronicle[] = [
       "From great-grandfather to father, from father to son, and now to the next generation—each has added their touch while preserving the core essence of what makes our Chaku special.",
     excerptNe:
       "हजुरबाबाबाट बाबामा, बाबाबाट छोरामा, र अब अर्को पुस्तामा—प्रत्येकले आफ्नो स्पर्श थपेका छन्, जबकि हाम्रो चाकुलाई विशेष बनाउने मुख्य सार संरक्षण गर्दै।",
-    date: "Heritage 2080 B.S. (2003 N.S.)",
+    date: "Heritage 2080 B.S.",
     category: "Heritage",
   },
   {
@@ -50,7 +50,7 @@ const chronicles: Chronicle[] = [
       "In a world of instant gratification, Chaku making teaches us the value of patience. Hours of slow pulling, careful attention to temperature, and respect for the process—these are lessons that extend beyond the kitchen.",
     excerptNe:
       "तत्काल संतुष्टिको संसारमा, चाकु बनाउनेले हामीलाई धैर्यको मूल्य सिकाउँछ। घण्टौंको बिस्तारै तान्ने, तापक्रममा सावधानी, र प्रक्रियाप्रति सम्मान—यी पाठहरू भान्छाबाट टाढा फैलिन्छन्।",
-    date: "Wisdom 2080 B.S. (2003 N.S.)",
+    date: "Wisdom 2080 B.S.",
     category: "Philosophy",
   },
 ];
