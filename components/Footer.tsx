@@ -177,18 +177,12 @@ const Footer: React.FC = () => {
         {/* Signature */}
         <div className="border-t border-parchment/20 pt-8 text-center">
           <p className="heading-serif text-xl text-antique-gold mb-2">
-            <span className="lang-en">Preserving Tokha&apos;s heritage, one batch at a time.</span>
+            <span className="lang-en text-xl font-semibold">Bringing the golden legacy of Tokha to every Nepali table.</span>
             <span className="lang-ne">श्री पशुपतिनाथ शरणम्</span>
           </p>
           <p className="text-parchment/60 text-sm">
-            <span className="lang-en">
-              © {new Date().getFullYear()} Shree Krishna Chaku Production Pvt.
-              Ltd. All rights reserved.
-            </span>
-            <span className="lang-ne">
-              © {new Date().getFullYear()} श्री कृष्ण चाकु उत्पादन प्रा. लि.
-              सर्वाधिकार सुरक्षित।
-            </span>
+            © {new Date().getFullYear()} Shree Krishna Chaku Production Pvt.
+            Ltd. All rights reserved.
           </p>
         </div>
       </div>

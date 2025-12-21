@@ -133,8 +133,8 @@ const ProductShowcase: React.FC = () => {
             <span className="lang-en">Our Products</span>
             <span className="lang-ne">हाम्रा उत्पादनहरू</span>
           </h2>
-          <p className="heading-serif text-lg text-masi-black/70 italic max-w-2xl mx-auto">
-            <span className="lang-en">A curated selection of varieties, each crafted with the same dedication to tradition and purity.</span>
+          <p className="heading-serif text-lg text-masi-black/90 italic max-w-2xl mx-auto">
+            <span className="lang-en font-medium">A curated selection of varieties, each crafted with the same dedication to tradition and purity.</span>
             <span className="lang-ne">परम्परा र शुद्धताप्रति उत्तिकै समर्पित भई तयार पारिएका छानिएका उत्पादनहरू।</span>
           </p>
         </div>

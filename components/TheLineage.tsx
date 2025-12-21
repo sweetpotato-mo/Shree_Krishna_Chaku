@@ -128,7 +128,7 @@ const TheLineage: React.FC = () => {
                 </svg>
               </div>
               <p className="heading-serif text-masi-black/60 text-sm italic leading-relaxed text-center">
-                <span className="lang-en">The complete story of Tokha, the heritage of Chaku, and the legacy of Shree Krishna Chaku will be unveiled here soon.</span>
+                <span className="lang-en text-masi-black/90 font-medium">The complete story of Tokha, the heritage of Chaku, and the legacy of Shree Krishna Chaku will be unveiled here soon.</span>
                 <span className="lang-ne">टोखाको पूर्ण कथा, चाकुको इतिहास र श्री कृष्ण चाकुको विरासत चाँडै यहाँ प्रस्तुत गरिनेछ।</span>
               </p>
             </motion.div>

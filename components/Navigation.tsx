@@ -3,23 +3,61 @@
 import { getAssetPath } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 const Navigation: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [language, setLanguage] = useState<"en" | "ne">("en");
+  const [language, setLanguage] = useState<"en" | "ne">("ne");
+  const desktopToggleRef = useRef<HTMLDivElement>(null);
+  const mobileToggleRef = useRef<HTMLDivElement>(null);
 
   // Load language preference from localStorage on mount
   useEffect(() => {
     const savedLanguage = localStorage.getItem("language") as "en" | "ne" | null;
-    if (savedLanguage) {
-      setLanguage(savedLanguage);
-      if (savedLanguage === "ne") {
-        document.body.classList.add("nepali-mode");
-      } else {
-        document.body.classList.remove("nepali-mode");
+    // Default to Nepali if no saved language or if saved language is 'ne'
+    // Only use English if explicitly set to 'en'
+    if (savedLanguage === "en") {
+      setLanguage("en");
+      document.body.classList.remove("nepali-mode");
+    } else {
+      // Default to Nepali (null or 'ne')
+      setLanguage("ne");
+      document.body.classList.add("nepali-mode");
+      if (!savedLanguage) {
+        localStorage.setItem("language", "ne");
       }
     }
+  }, []);
+
+  // Add initial glow animation to toggle buttons
+  useEffect(() => {
+    const addGlow = () => {
+      if (desktopToggleRef.current) {
+        desktopToggleRef.current.classList.add("initial-glow");
+      }
+      if (mobileToggleRef.current) {
+        mobileToggleRef.current.classList.add("initial-glow");
+      }
+    };
+
+    const removeGlow = () => {
+      if (desktopToggleRef.current) {
+        desktopToggleRef.current.classList.remove("initial-glow");
+      }
+      if (mobileToggleRef.current) {
+        mobileToggleRef.current.classList.remove("initial-glow");
+      }
+    };
+
+    // Add glow on mount
+    addGlow();
+
+    // Remove glow after 6 seconds
+    const timer = setTimeout(() => {
+      removeGlow();
+    }, 6000);
+
+    return () => clearTimeout(timer);
   }, []);
 
   // Handle language toggle
@@ -82,8 +120,14 @@ const Navigation: React.FC = () => {
             </div>
             {/* Brand Text in Antique Gold - visible on all screens, wraps on mobile */}
             <span className="heading-serif text-xs sm:text-lg md:text-xl lg:text-2xl text-antique-gold leading-tight">
-              <span className="block sm:inline">Shree Krishna</span>
-              <span className="block sm:inline sm:ml-1">Tokha Chaku</span>
+              <span className="lang-en">
+                <span className="block sm:inline">Shree Krishna</span>
+                <span className="block sm:inline sm:ml-1">Tokha Chaku</span>
+              </span>
+              <span className="lang-ne">
+                <span className="block sm:inline">श्री कृष्ण</span>
+                <span className="block sm:inline sm:ml-1">टोखा चाकु</span>
+              </span>
             </span>
           </button>
 
@@ -100,8 +144,8 @@ const Navigation: React.FC = () => {
               </button>
             ))}
 
-            {/* Language Toggle */}
-            <div className="flex items-center space-x-1 border-l border-parchment/20 pl-4 ml-4">
+            {/* Language Toggle - Desktop */}
+            <div ref={desktopToggleRef} className="flex items-center space-x-1 border-l border-parchment/20 pl-4 ml-4">
               <button
                 onClick={() => handleLanguageChange("en")}
                 className={`px-3 py-1.5 text-sm font-medium transition-colors ${
@@ -126,14 +170,41 @@ const Navigation: React.FC = () => {
             </div>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden transition-colors duration-300 text-antique-gold"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile: Language Toggle + Hamburger Button */}
+          <div className="md:hidden flex items-center space-x-3">
+            {/* Language Toggle - Mobile */}
+            <div ref={mobileToggleRef} className="flex items-center space-x-1">
+              <button
+                onClick={() => handleLanguageChange("en")}
+                className={`px-2 py-1.5 text-sm font-medium transition-colors ${
+                  language === "en"
+                    ? "text-antique-gold"
+                    : "text-parchment/70 hover:text-parchment"
+                }`}
+              >
+                EN
+              </button>
+              <span className="text-parchment/40">|</span>
+              <button
+                onClick={() => handleLanguageChange("ne")}
+                className={`px-2 py-1.5 text-sm font-medium transition-colors ${
+                  language === "ne"
+                    ? "text-antique-gold"
+                    : "text-parchment/70 hover:text-parchment"
+                }`}
+              >
+                ने
+              </button>
+            </div>
+            {/* Mobile Menu Button */}
+            <button
+              className="transition-colors duration-300 text-antique-gold"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -150,25 +221,6 @@ const Navigation: React.FC = () => {
                 {language === "en" ? item.en : item.ne}
               </button>
             ))}
-            <div className="flex items-center space-x-2 pt-4 border-t border-parchment/20">
-              <button
-                onClick={() => handleLanguageChange("en")}
-                className={`px-3 py-1.5 text-sm font-medium ${
-                  language === "en" ? "text-antique-gold" : "text-parchment/70"
-                }`}
-              >
-                EN
-              </button>
-              <span className="text-parchment/40">|</span>
-              <button
-                onClick={() => handleLanguageChange("ne")}
-                className={`px-3 py-1.5 text-sm font-medium ${
-                  language === "ne" ? "text-antique-gold" : "text-parchment/70"
-                }`}
-              >
-                ने
-              </button>
-            </div>
           </div>
         </div>
       )}

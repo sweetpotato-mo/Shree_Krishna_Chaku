@@ -69,6 +69,11 @@ h6 {
   font-family: "Mukta", sans-serif;
 }
 
+/* Slightly larger font size for Nepali text in navigation */
+nav .nepali-text {
+  font-size: 0.9375rem; /* 15px - slightly larger than text-sm (14px) */
+}
+
 /* Glassmorphism utility */
 .glassmorphism {
   background: rgba(26, 26, 26, 0.8);
@@ -152,11 +157,11 @@ nav[class*="fixed"] {
 }
 
 /* Language Toggle Styles */
-/* Default state (English) */
-.lang-ne {
+/* Default state (Nepali) */
+.lang-en {
     display: none !important;
 }
-.lang-en {
+.lang-ne {
     display: block; /* or inline-block depending on context */
 }
 
@@ -166,14 +171,39 @@ span.lang-ne {
     display: inline;
 }
 
-/* Nepali State */
-body.nepali-mode .lang-ne {
+/* English State (when body doesn't have nepali-mode) */
+body:not(.nepali-mode) .lang-en {
     display: block !important;
 }
-body.nepali-mode .lang-en {
+body:not(.nepali-mode) .lang-ne {
     display: none !important;
 }
 
-body.nepali-mode span.lang-ne {
+body:not(.nepali-mode) span.lang-en {
     display: inline !important;
+}
+
+/* Attention Glow Animation for Language Toggle */
+@keyframes pulse-red {
+  0% { box-shadow: 0 0 0 0 rgba(139, 0, 0, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(139, 0, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(139, 0, 0, 0); }
+}
+
+.initial-glow {
+  animation: pulse-red 1.5s infinite;
+  z-index: 1050;
+  border-radius: 4px;
+  position: relative;
+}
+
+.initial-glow::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 4px;
+  pointer-events: none;
 }
