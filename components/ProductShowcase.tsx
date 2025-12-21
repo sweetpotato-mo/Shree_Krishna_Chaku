@@ -52,6 +52,33 @@ const products: Product[] = [
     image: "/sutkeri-chaku.jpg",
     color: "from-masi-black/10 to-masi-black/5",
   },
+  {
+    name: "Kalo Til ko Laddu",
+    nameNe: "कालो तिलको लड्डु (हाम्वः)",
+    description:
+      "A traditional winter delicacy made from toasted sesame seeds and our signature Tokha Chaku. Known locally as 'Hamwo,' these nutrient-dense spheres offer a deep flavor and a satisfying crunch.",
+    descriptionNe: "",
+    image: "/kalo_til.jpg",
+    color: "from-masi-black/10 to-masi-black/5",
+  },
+  {
+    name: "Seto Til ko Laddu",
+    nameNe: "सेतो तिलको लड्डु (तिलौरा)",
+    description:
+      "Delicate white sesame seeds blended with sugar to create a lighter, aromatic treat. These classic sweets are an essential part of the Maghe Sankranti ritual, symbolizing warmth and community.",
+    descriptionNe: "",
+    image: "/seto_til.jpg",
+    color: "from-parchment to-parchment/80",
+  },
+  {
+    name: "Pustakari",
+    nameNe: "पुस्तकारी",
+    description:
+      "Tokha's famous slow-cooked \"hard candy,\" prepared by reducing milk, sugar, and Chaku to a rich, fudge-like consistency. Infused with coconut, dates, and cardamom, it is a timeless testament to Newari confectionery.",
+    descriptionNe: "",
+    image: "/pustakari.jpg",
+    color: "from-antique-gold/20 to-antique-gold/10",
+  },
 ];
 
 const ProductShowcase: React.FC = () => {
