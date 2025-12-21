@@ -147,7 +147,7 @@ const Footer: React.FC = () => {
             <div className="pt-6 border-t border-parchment/20">
               <p className="text-parchment/70 text-sm leading-relaxed">
                 <span className="lang-en">
-                  Member of the{" "}
+                  Associated with the{" "}
                   <a
                     href="https://english.onlinekhabar.com/tokha-bazaar-gears-up-for-maghe-sankranti-to-fulfill-demand-for-chaku.html#:~:text=The%20Chaku%20produced%20here%20is,various%20countries%20around%20the%20world."
                     target="_blank"
@@ -167,7 +167,7 @@ const Footer: React.FC = () => {
                   >
                     टोखा परम्परागत चाकु संरक्षण समाज
                   </a>
-                  {" "}को सदस्य
+                  {" "}मा आबद्ध
                 </span>
               </p>
             </div>
