@@ -16,15 +16,23 @@ const Footer: React.FC = () => {
             <div className="flex items-center space-x-3 mb-4">
               <MapPin className="text-antique-gold flex-shrink-0" size={20} />
               <h3 className="heading-serif text-xl sm:text-2xl text-parchment">
-                Visit Us
+                <span className="lang-en">Visit Us</span>
+                <span className="lang-ne">ठेगाना</span>
               </h3>
             </div>
             <div className="space-y-2 text-parchment/80">
               <p className="text-base sm:text-lg font-semibold">
-                Shree Krishna Chaku Production Pvt. Ltd.
+                <span className="lang-en">Shree Krishna Chaku Production Pvt. Ltd.</span>
+                <span className="lang-ne">श्री कृष्ण चाकु प्रोडक्सन प्रा. लि.</span>
               </p>
-              <p>Tokha-3, Dekwo</p>
-              <p>Kathmandu, Nepal</p>
+              <p>
+                <span className="lang-en">Tokha-3, Dekwo</span>
+                <span className="lang-ne">टोखा-३, देक्वो</span>
+              </p>
+              <p>
+                <span className="lang-en">Kathmandu, Nepal</span>
+                <span className="lang-ne">काठमाडौँ, नेपाल</span>
+              </p>
             </div>
             <a
               href="https://maps.app.goo.gl/cE3QnE9E4f8wiuxf9"
@@ -32,7 +40,8 @@ const Footer: React.FC = () => {
               rel="noopener noreferrer"
               className="inline-block bg-hyangu-red hover:bg-hyangu-red/90 text-parchment px-6 py-3 rounded-none font-semibold transition-all duration-300 border-2 border-parchment/20 hover:border-parchment/40 mt-6"
             >
-              Open in Google Maps
+              <span className="lang-en">Open in Google Maps</span>
+              <span className="lang-ne">गुगल म्याप्समा खोल्नुहोस्</span>
             </a>
           </div>
 
@@ -40,7 +49,8 @@ const Footer: React.FC = () => {
           <div className="space-y-8">
             <div>
               <h3 className="heading-serif text-xl sm:text-2xl text-parchment mb-6">
-                Contact Us
+                <span className="lang-en">Contact Us</span>
+                <span className="lang-ne">सम्पर्क</span>
               </h3>
               <div className="space-y-4">
                 <div className="flex items-center space-x-4">
@@ -82,7 +92,8 @@ const Footer: React.FC = () => {
             {/* Social Media */}
             <div>
               <h4 className="text-parchment/90 font-semibold mb-4">
-                Follow Our Journey
+                <span className="lang-en">Follow Our Journey</span>
+                <span className="lang-ne">हाम्रो यात्रा अनुसरण गर्नुहोस्</span>
               </h4>
               <div className="flex space-x-4">
                 <a
@@ -135,15 +146,29 @@ const Footer: React.FC = () => {
             {/* Heritage Statement */}
             <div className="pt-6 border-t border-parchment/20">
               <p className="text-parchment/70 text-sm leading-relaxed">
-                Member of the{" "}
-                <a
-                  href="https://english.onlinekhabar.com/tokha-bazaar-gears-up-for-maghe-sankranti-to-fulfill-demand-for-chaku.html#:~:text=The%20Chaku%20produced%20here%20is,various%20countries%20around%20the%20world."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-antique-gold font-semibold border-b border-parchment/30 hover:text-hyangu-red hover:border-hyangu-red/70 transition-all duration-300 ease-in-out"
-                >
-                  Tokha Traditional Chaku Conservation Society
-                </a>
+                <span className="lang-en">
+                  Member of the{" "}
+                  <a
+                    href="https://english.onlinekhabar.com/tokha-bazaar-gears-up-for-maghe-sankranti-to-fulfill-demand-for-chaku.html#:~:text=The%20Chaku%20produced%20here%20is,various%20countries%20around%20the%20world."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-antique-gold font-semibold border-b border-parchment/30 hover:text-hyangu-red hover:border-hyangu-red/70 transition-all duration-300 ease-in-out"
+                  >
+                    Tokha Traditional Chaku Conservation Society
+                  </a>
+                </span>
+                <span className="lang-ne">
+                  {" "}
+                  <a
+                    href="https://english.onlinekhabar.com/tokha-bazaar-gears-up-for-maghe-sankranti-to-fulfill-demand-for-chaku.html#:~:text=The%20Chaku%20produced%20here%20is,various%20countries%20around%20the%20world."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-antique-gold font-semibold border-b border-parchment/30 hover:text-hyangu-red hover:border-hyangu-red/70 transition-all duration-300 ease-in-out"
+                  >
+                    टोखा परम्परागत चाकु संरक्षण समाज
+                  </a>
+                  {" "}को सदस्य
+                </span>
               </p>
             </div>
           </div>
@@ -152,11 +177,18 @@ const Footer: React.FC = () => {
         {/* Signature */}
         <div className="border-t border-parchment/20 pt-8 text-center">
           <p className="heading-serif text-xl text-antique-gold mb-2">
-            Preserving Tokha&apos;s heritage, one batch at a time.
+            <span className="lang-en">Preserving Tokha&apos;s heritage, one batch at a time.</span>
+            <span className="lang-ne">श्री पशुपतिनाथ शरणम्</span>
           </p>
           <p className="text-parchment/60 text-sm">
-            © {new Date().getFullYear()} Shree Krishna Chaku Production Pvt.
-            Ltd. All rights reserved.
+            <span className="lang-en">
+              © {new Date().getFullYear()} Shree Krishna Chaku Production Pvt.
+              Ltd. All rights reserved.
+            </span>
+            <span className="lang-ne">
+              © {new Date().getFullYear()} श्री कृष्ण चाकु उत्पादन प्रा. लि.
+              सर्वाधिकार सुरक्षित।
+            </span>
           </p>
         </div>
       </div>

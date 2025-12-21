@@ -157,15 +157,25 @@ const Hero: React.FC = () => {
       <div className="relative z-10 h-full flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-5xl mx-auto">
           <h1 className="heading-serif text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl text-parchment mb-6 leading-tight">
-            Tokha&apos;s Heritage,
-            <br />
-            <span className="text-antique-gold">
-              Refined Over Four Generations
+            <span className="lang-en">
+              Tokha&apos;s Heritage,
+              <br />
+              <span className="text-antique-gold">
+                Refined Over Four Generations
+              </span>
+            </span>
+            <span className="lang-ne">
+              टोखाको मौलिकता,
+              <br />
+              <span className="text-antique-gold">
+                चार पुस्ताको निखार
+              </span>
             </span>
           </h1>
 
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-parchment/90 mb-12 font-light">
-            A 4th-generation artisanal tradition from Tokha-3, Dekwo, Kathmandu
+            <span className="lang-en">A 4th-generation artisanal tradition from Tokha-3, Dekwo, Kathmandu</span>
+            <span className="lang-ne">पुस्तौंदेखि जोगाउँदै ल्याइएको टोखा-३, देक्वोको रैथाने कला</span>
           </p>
 
           <div className="flex flex-col items-center gap-4">
@@ -173,13 +183,15 @@ const Hero: React.FC = () => {
               onClick={scrollToNext}
               className="px-8 py-4 bg-hyangu-red text-parchment rounded-none border-2 border-parchment hover:bg-parchment hover:text-hyangu-red transition-all duration-300 font-semibold text-lg tracking-wide"
             >
-              Explore the Lineage
+              <span className="lang-en">Explore the Lineage</span>
+              <span className="lang-ne">हाम्रो कथा</span>
             </button>
             <button
               onClick={scrollToContact}
               className="px-8 py-4 bg-transparent text-parchment rounded-none border-2 border-parchment/70 hover:border-parchment hover:bg-parchment/10 transition-all duration-300 font-semibold text-lg tracking-wide"
             >
-              Contact Us
+              <span className="lang-en">Contact Us</span>
+              <span className="lang-ne">सम्पर्क</span>
             </button>
           </div>
         </div>

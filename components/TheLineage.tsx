@@ -23,50 +23,83 @@ const TheLineage: React.FC = () => {
             </div>
             <div className="absolute inset-0 bg-gradient-to-t from-masi-black/50 via-transparent to-transparent" />
             <div className="absolute bottom-6 left-6 text-parchment">
-              <p className="text-sm opacity-90">Tokha-3, Dekwo, Kathmandu</p>
+              <p className="text-sm opacity-90">
+                <span className="lang-en">Tokha-3, Dekwo, Kathmandu</span>
+                <span className="lang-ne">काठमाडौं, देक्वो, टोखा-३</span>
+              </p>
             </div>
           </div>
 
           {/* Right: Content */}
           <div className="space-y-6">
             <h2 className="heading-serif text-3xl sm:text-4xl md:text-5xl text-hyangu-red mb-4">
-              Our Story
+              <span className="lang-en">Our Story</span>
+              <span className="lang-ne">हाम्रो कथा</span>
             </h2>
             <div className="space-y-4 text-lg text-masi-black leading-relaxed">
               <p>
-                Rooted in a four-generation family craft and officially
-                registered in 2063 B.S., Shree Krishna Chaku Production is a
-                protector of Tokha&apos;s ancestral taste. Our family has
-                dedicated itself to preserving the traditional methods of Chaku
-                making, passed down through the ages.
+                <span className="lang-en">
+                  Rooted in a four-generation family craft and officially
+                  registered in 2063 B.S., Shree Krishna Chaku Production is a
+                  protector of Tokha&apos;s ancestral taste. Our family has
+                  dedicated itself to preserving the traditional methods of Chaku
+                  making, passed down through the ages.
+                </span>
+                <span className="lang-ne">
+                  चार पुस्तादेखि चलिआएको पारिवारिक सीपमा आधारित र वि.सं. २०६३ मा आधिकारिक रूपमा दर्ता भएको 'श्री कृष्ण चाकु प्रोडक्सन' टोखाको पुर्ख्यौली स्वादको संरक्षक हो। हाम्रो परिवार पुस्तौंदेखि हस्तान्तरण हुँदै आएको चाकु बनाउने परम्परागत विधिलाई जोगाउन पूर्ण रूपमा समर्पित छ।
+                </span>
               </p>
               <p>
-                Our journey began in the heart of Tokha-3, Dekwo, where the
-                rhythm of the Keela (wooden hook) and the slow, deliberate
-                process of Taneko (pulling) Chaku became synonymous with our
-                name. Each batch is crafted with the same care and attention
-                that our ancestors brought to this sacred art.
+                <span className="lang-en">
+                  Our journey began in the heart of Tokha-3, Dekwo, where the
+                  rhythm of the Keela (wooden hook) and the slow, deliberate
+                  process of Taneko (pulling) Chaku became synonymous with our
+                  name. Each batch is crafted with the same care and attention
+                  that our ancestors brought to this sacred art.
+                </span>
+                <span className="lang-ne">
+                  हाम्रो यात्रा टोखा-३, देक्वोको मुटुबाट सुरु भएको हो, जहाँ 'किला' (काठको हुक) को ताल र चाकु 'तान्ने' (Taneko) धैर्यपूर्ण प्रक्रिया नै हाम्रो पहिचान बन्यो। प्रत्येक ब्याच त्यही आत्मीयता र सावधानीका साथ तयार गरिन्छ जुन हाम्रा पुर्खाहरूले यस पवित्र कलामा भर्थे।
+                </span>
               </p>
               <p>
-                As a proud member of the{" "}
-                <a
-                  href="https://english.onlinekhabar.com/tokha-bazaar-gears-up-for-maghe-sankranti-to-fulfill-demand-for-chaku.html#:~:text=The%20Chaku%20produced%20here%20is,various%20countries%20around%20the%20world."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-semibold text-masi-black border-b border-masi-black/30 hover:text-hyangu-red hover:border-hyangu-red/70 transition-all duration-300 ease-in-out"
-                >
-                  Tokha Traditional Chaku Conservation Society
-                </a>
-                , we are committed to maintaining the purity and authenticity of
-                this time-honored tradition. Our Chaku is SO2 free, with no
-                added colors or preservatives— just pure, traditional
-                craftsmanship.
+                <span className="lang-en">
+                  As a proud member of the{" "}
+                  <a
+                    href="https://english.onlinekhabar.com/tokha-bazaar-gears-up-for-maghe-sankranti-to-fulfill-demand-for-chaku.html#:~:text=The%20Chaku%20produced%20here%20is,various%20countries%20around%20the%20world."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-masi-black border-b border-masi-black/30 hover:text-hyangu-red hover:border-hyangu-red/70 transition-all duration-300 ease-in-out"
+                  >
+                    Tokha Traditional Chaku Conservation Society
+                  </a>
+                  , we are committed to maintaining the purity and authenticity of
+                  this time-honored tradition. Our Chaku is SO2 free, with no
+                  added colors or preservatives— just pure, traditional
+                  craftsmanship.
+                </span>
+                <span className="lang-ne">
+                  {" "}
+                  <a
+                    href="https://english.onlinekhabar.com/tokha-bazaar-gears-up-for-maghe-sankranti-to-fulfill-demand-for-chaku.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-masi-black border-b border-masi-black/30 hover:text-hyangu-red hover:border-hyangu-red/70 transition-all duration-300 ease-in-out"
+                  >
+                    'टोखा परम्परागत चाकु संरक्षण समाज'
+                  </a>
+                  {" "}को गर्विलो सदस्यका रूपमा हामी यस ऐतिहासिक परम्पराको शुद्धता र मौलिकता कायम राख्न प्रतिबद्ध छौं। हाम्रो चाकु SO<sub>2</sub> (सल्फर) मुक्त छ, जसमा कुनै अतिरिक्त रङ्ग वा संरक्षक तत्वहरू मिसाइएको छैन—यो केवल शुद्ध र परम्परागत हस्तकलाको उपज हो।
+                </span>
               </p>
             </div>
             <div className="pt-4 border-t-2 border-hyangu-red/30">
               <p className="text-antique-gold font-semibold text-xl">
-                &quot;Preserving Tokha&apos;s legacy, generation after
-                generation.&quot;
+                <span className="lang-en">
+                  &quot;Preserving Tokha&apos;s legacy, generation after
+                  generation.&quot;
+                </span>
+                <span className="lang-ne">
+                  &quot;पुस्ता दर पुस्ता, टोखाको विरासत जोगाउँदै।&quot;
+                </span>
               </p>
             </div>
             {/* Digital Archive Notice */}
@@ -95,7 +128,8 @@ const TheLineage: React.FC = () => {
                 </svg>
               </div>
               <p className="heading-serif text-masi-black/60 text-sm italic leading-relaxed text-center">
-                The complete story of Tokha, the heritage of Chaku, and the legacy of Shree Krishna Chaku will be unveiled here soon.
+                <span className="lang-en">The complete story of Tokha, the heritage of Chaku, and the legacy of Shree Krishna Chaku will be unveiled here soon.</span>
+                <span className="lang-ne">टोखाको पूर्ण कथा, चाकुको इतिहास र श्री कृष्ण चाकुको विरासत चाँडै यहाँ प्रस्तुत गरिनेछ।</span>
               </p>
             </motion.div>
           </div>

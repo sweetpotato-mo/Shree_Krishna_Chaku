@@ -3,17 +3,41 @@
 import { getAssetPath } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Navigation: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [language, setLanguage] = useState<"en" | "ne">("en");
 
+  // Load language preference from localStorage on mount
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem("language") as "en" | "ne" | null;
+    if (savedLanguage) {
+      setLanguage(savedLanguage);
+      if (savedLanguage === "ne") {
+        document.body.classList.add("nepali-mode");
+      } else {
+        document.body.classList.remove("nepali-mode");
+      }
+    }
+  }, []);
+
+  // Handle language toggle
+  const handleLanguageChange = (lang: "en" | "ne") => {
+    setLanguage(lang);
+    localStorage.setItem("language", lang);
+    if (lang === "ne") {
+      document.body.classList.add("nepali-mode");
+    } else {
+      document.body.classList.remove("nepali-mode");
+    }
+  };
+
   const navItems = [
     { en: "Our Story", ne: "हाम्रो कथा", id: "lineage" },
     { en: "Products", ne: "उत्पादनहरू", id: "products" },
-    { en: "Tokha Chronicles", ne: "टोखा इतिहास", id: "chronicles" },
-    { en: "Visit Us", ne: "भेट्नुहोस्", id: "footer" },
+    { en: "Tokha Chronicles", ne: "टोखा वृत्तान्त", id: "chronicles" },
+    { en: "Contact Us", ne: "सम्पर्क", id: "footer" },
   ];
 
   const scrollToSection = (id: string) => {
@@ -79,7 +103,7 @@ const Navigation: React.FC = () => {
             {/* Language Toggle */}
             <div className="flex items-center space-x-1 border-l border-parchment/20 pl-4 ml-4">
               <button
-                onClick={() => setLanguage("en")}
+                onClick={() => handleLanguageChange("en")}
                 className={`px-3 py-1.5 text-sm font-medium transition-colors ${
                   language === "en"
                     ? "text-antique-gold"
@@ -90,7 +114,7 @@ const Navigation: React.FC = () => {
               </button>
               <span className="text-parchment/40">|</span>
               <button
-                onClick={() => setLanguage("ne")}
+                onClick={() => handleLanguageChange("ne")}
                 className={`px-3 py-1.5 text-sm font-medium transition-colors ${
                   language === "ne"
                     ? "text-antique-gold"
@@ -128,7 +152,7 @@ const Navigation: React.FC = () => {
             ))}
             <div className="flex items-center space-x-2 pt-4 border-t border-parchment/20">
               <button
-                onClick={() => setLanguage("en")}
+                onClick={() => handleLanguageChange("en")}
                 className={`px-3 py-1.5 text-sm font-medium ${
                   language === "en" ? "text-antique-gold" : "text-parchment/70"
                 }`}
@@ -137,7 +161,7 @@ const Navigation: React.FC = () => {
               </button>
               <span className="text-parchment/40">|</span>
               <button
-                onClick={() => setLanguage("ne")}
+                onClick={() => handleLanguageChange("ne")}
                 className={`px-3 py-1.5 text-sm font-medium ${
                   language === "ne" ? "text-antique-gold" : "text-parchment/70"
                 }`}

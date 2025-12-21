@@ -19,7 +19,7 @@ const chronicles: Chronicle[] = [
     excerpt:
       "In the quiet hours of dawn, the Keela—the stout wooden hook secured into the wall—becomes a metronome of tradition. Each pull (Taneko), each stretch, follows a rhythm passed down through generations—a rhythm that cannot be rushed.",
     excerptNe:
-      "बिहानीको मिर्मिरेमा, भित्तामा बलियो गरी गाडिएको त्यो 'किला' परम्पराको मियो बन्छ। चाकु तान्ने (तनेको) प्रत्येक धक्का र तन्काईमा पुर्खाले सिकाएको लय गुञ्जिन्छ—त्यस्तो लय जसमा हतारको कुनै गुञ्जायस हुँदैन।",
+      "भित्तामा बलियो गरी गाडिएको त्यो 'किला' परम्पराको मियो बन्छ। चाकु तान्ने प्रत्येक धक्का र तन्काईमा पुर्खाले सिकाएको लय गुञ्जिन्छ—त्यस्तो लय जसमा हतारको कुनै गुञ्जायस हुँदैन।",
     date: "Maghe Sankranti 2080 B.S.",
     category: "Tradition",
   },
@@ -29,7 +29,7 @@ const chronicles: Chronicle[] = [
     excerpt:
       "Maghe Sankranti marks the peak of Chaku season in Tokha. The cold winter air, the warmth of the fire, and the communal spirit of making Chaku together—this is when Tokha truly comes alive.",
     excerptNe:
-      "माघे सङ्क्रान्ति टोखामा चाकु उत्पादनको मुख्य याम हो। जाडोको सिरेटो बिर्साउने आगोको न्यानो र सबै मिलेर चाकु बनाउने त्यो रमाइलो माहोल—यही समयमा टोखा साँच्चै गुल्जार देखिन्छ।",
+      "टोखामा माघे सङ्क्रान्ति केवल एक चाड होइन, यो चाकुको मौसम हो। जाडोको सिरेटो बिर्साउने आगोको राप र समुदाय मिलेर चाकु बनाउने/खाने त्यो उल्लास—यही नै त्यो समय हो जब टोखाको मौलिकता साँच्चै जुर्मुराउँछ।",
     date: "Maghe Sankranti 2080 B.S.",
     category: "Festival",
   },
@@ -39,7 +39,7 @@ const chronicles: Chronicle[] = [
     excerpt:
       "From great-grandfather to father, from father to son, and now to the next generation—each has added their touch while preserving the core essence of what makes our Chaku special.",
     excerptNe:
-      "जिजुबाजेदेखि बाजे, बाजेदेखि बुबा र बुबादेखि छोराहरूसम्म—प्रत्येक पुस्ताले चाकुको मौलिक स्वाद र गुणस्तरलाई जोगाउँदै आ-आफ्नो सीप र मेहेनत थपेका छन्।",
+      "जिजुबाजेदेखि नाति-पनातिसम्म—हरेक पुस्ताले पुर्ख्यौली सीपमा आफ्नोपन मिसाउँदै आएका छन्, तर चाकुको त्यो 'कोर' (Core) स्वाद र मौलिकतालाई भने जस्ताको तस्तै जोगाएर राखेका छन्।",
     date: "Heritage 2080 B.S.",
     category: "Heritage",
   },
@@ -49,7 +49,7 @@ const chronicles: Chronicle[] = [
     excerpt:
       "In a world of instant gratification, Chaku making teaches us the value of patience. Hours of slow pulling, careful attention to temperature, and respect for the process—these are lessons that extend beyond the kitchen.",
     excerptNe:
-      "सबै कुरा तुरुन्तै चाहिने आजको हतारोको दुनियाँमा, चाकु बनाउने कलाले हामीलाई धैर्यताको महत्त्व सिकाउँछ। घण्टौंसम्म तान्नुपर्ने धैर्य, तापक्रमको सही सन्तुलन र कामप्रतिको सम्मान—यी पाठहरू भान्छामा मात्र सीमित नभई जीवनमै काम लाग्ने खालका छन्।",
+      "सबै कुरा तुरुन्तै चाहिने आजको हतारोको युगमा, चाकु बनाउने कलाले हामीलाई धैर्यताको महत्त्व सिकाउँछ। घण्टौंसम्म तान्नुपर्ने धैर्य, तापक्रमको सही सन्तुलन र कामप्रतिको सम्मान—यी पाठहरू भान्छामा मात्र सीमित नभई जीवनमै काम लाग्ने खालका छन्।",
     date: "Wisdom 2080 B.S.",
     category: "Philosophy",
   },
@@ -85,12 +85,13 @@ const TokhaChronicles: React.FC = () => {
           <div className="inline-flex items-center justify-center mb-4">
             <BookOpen className="text-hyangu-red mr-3" size={32} />
             <h2 className="heading-serif text-3xl sm:text-4xl md:text-5xl text-hyangu-red">
-              Tokha Chronicles
+              <span className="lang-en">Tokha Chronicles</span>
+              <span className="lang-ne">टोखा वृत्तान्त</span>
             </h2>
           </div>
           <p className="text-lg text-masi-black/80 max-w-2xl mx-auto">
-            Stories, traditions, and wisdom from the heart of Tokha&apos;s Chaku
-            heritage.
+            <span className="lang-en">Stories, traditions, and wisdom from the heart of Tokha&apos;s Chaku heritage.</span>
+            <span className="lang-ne">टोखाको चाकु विरासतका कथाहरू, परम्परा र ज्ञान।</span>
           </p>
         </div>
 
@@ -104,12 +105,19 @@ const TokhaChronicles: React.FC = () => {
               <div className="flex items-start justify-between mb-4">
                 <div className="flex-1">
                   <span className="text-xs uppercase tracking-wider text-hyangu-red font-semibold mb-2 block">
-                    Chapter {index + 1} • {chronicle.category}
+                    <span className="lang-en">Chapter {index + 1} • {chronicle.category}</span>
+                    <span className="lang-ne">
+                      {index + 1 === 1 && "अध्याय १ • परम्परा"}
+                      {index + 1 === 2 && "अध्याय २ • पर्व"}
+                      {index + 1 === 3 && "अध्याय ३ • विरासत"}
+                      {index + 1 === 4 && "अध्याय ४ • दर्शन"}
+                    </span>
                   </span>
                   <h3 className="heading-serif text-2xl md:text-3xl text-masi-black mb-2 group-hover:text-hyangu-red transition-colors">
-                    {chronicle.title}
+                    <span className="lang-en">{chronicle.title}</span>
+                    <span className="lang-ne">{chronicle.titleNe}</span>
                   </h3>
-                  <p className="nepali-text text-masi-black/70 text-sm mb-3">
+                  <p className="nepali-text text-masi-black/70 text-sm mb-3 lang-en">
                     {chronicle.titleNe}
                   </p>
                 </div>
@@ -118,10 +126,8 @@ const TokhaChronicles: React.FC = () => {
               {/* Excerpt */}
               <div className="space-y-3">
                 <p className="text-masi-black/80 leading-relaxed text-base">
-                  {chronicle.excerpt}
-                </p>
-                <p className="nepali-text text-masi-black/70 leading-relaxed text-sm">
-                  {chronicle.excerptNe}
+                  <span className="lang-en">{chronicle.excerpt}</span>
+                  <span className="lang-ne">{chronicle.excerptNe}</span>
                 </p>
               </div>
 
@@ -135,7 +141,8 @@ const TokhaChronicles: React.FC = () => {
                   onClick={handleReadMore}
                   className="text-hyangu-red font-semibold text-sm hover:underline transition-colors duration-200"
                 >
-                  Read More →
+                  <span className="lang-en">Read More →</span>
+                  <span className="lang-ne">थप पढ्नुहोस् →</span>
                 </button>
               </div>
             </article>
@@ -148,7 +155,8 @@ const TokhaChronicles: React.FC = () => {
             {/* Coming Soon Badge */}
             <div className="absolute top-4 right-4">
               <span className="bg-hyangu-red text-parchment text-xs uppercase tracking-wider font-semibold px-3 py-1.5">
-                Coming Soon
+                <span className="lang-en">Coming Soon</span>
+                <span className="lang-ne">चाँडै आउँदैछ</span>
               </span>
             </div>
 
@@ -175,17 +183,23 @@ const TokhaChronicles: React.FC = () => {
 
             {/* Headline */}
             <h3 className="heading-serif text-2xl md:text-3xl text-masi-black text-center mb-6">
-              Digitizing the Chaku Smarika (2078 B.S.)
+              <span className="lang-en">Digitizing the Chaku Smarika (2078 B.S.)</span>
+              <span className="lang-ne">चाकु स्मारिका (२०७८) को डिजिटलीकरण</span>
             </h3>
 
             {/* Body Text */}
             <p className="text-masi-black/80 leading-relaxed text-base md:text-lg text-center max-w-2xl mx-auto">
-              The wisdom of Tokha is being preserved for the digital age. A
-              curated selection of printed articles from the Chaku Smarika (2078
-              B.S.) will soon be available here. This collection features deep
-              insights on the history, culture, and future prospects of Tokha
-              and Chaku from influential Newa: personalities who relate to Tokha
-              and the broader Newa: culture.
+              <span className="lang-en">
+                The wisdom of Tokha is being preserved for the digital age. A
+                curated selection of printed articles from the Chaku Smarika (2078
+                B.S.) will soon be available here. This collection features deep
+                insights on the history, culture, and future prospects of Tokha
+                and Chaku from influential Newa: personalities who relate to Tokha
+                and the broader Newa: culture.
+              </span>
+              <span className="lang-ne">
+                टोखाको ज्ञानलाई डिजिटल युगका लागि सुरक्षित गरिँदैछ। चाकु स्मारिका (२०७८) बाट छानिएका लेखहरू चाँडै यहाँ उपलब्ध हुनेछन्। यस संग्रहमा टोखा र नेवारी संस्कृतिसँग जोडिएका व्यक्तित्वहरूद्वारा लेखिएका टोखाको इतिहास, संस्कृति र भविष्यका सम्भावनाहरू बारे गहन अन्तर्दृष्टिहरू समावेश छन्।
+              </span>
             </p>
           </article>
         </div>
@@ -197,7 +211,8 @@ const TokhaChronicles: React.FC = () => {
           <div className="bg-masi-black text-parchment p-4 md:p-6 rounded-lg shadow-2xl border-l-4 border-hyangu-red max-w-sm">
             <div className="flex items-start justify-between gap-4">
               <p className="text-sm md:text-base leading-relaxed flex-1">
-                The full article and digital records for this chapter will be available here soon.
+                <span className="lang-en">The full article and digital records for this chapter will be available here soon.</span>
+                <span className="lang-ne">यस अध्यायको पूर्ण लेख र डिजिटल रेकर्डहरू छिट्टै यहाँ उपलब्ध हुनेछ।</span>
               </p>
               <button
                 onClick={() => setShowToast(false)}
