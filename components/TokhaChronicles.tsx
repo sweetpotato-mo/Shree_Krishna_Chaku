@@ -15,41 +15,41 @@ interface Chronicle {
 const chronicles: Chronicle[] = [
   {
     title: "The Secret Rhythm of the Hook",
-    titleNe: "गजुुरको गोप्य ताल",
+    titleNe: "किलाको गोप्य लय",
     excerpt:
       "In the quiet hours of dawn, the Keela—the stout wooden hook secured into the wall—becomes a metronome of tradition. Each pull (Taneko), each stretch, follows a rhythm passed down through generations—a rhythm that cannot be rushed.",
     excerptNe:
-      "बिहानको शान्त घण्टाहरूमा, गजुुर—काठको मोटो हुक जुन भित्तामा सुरक्षित छ—परम्पराको मेट्रोनोम बन्छ। प्रत्येक तान्ने (तानेको), प्रत्येक फैलाउने, पुस्ता दर पुस्ता हस्तान्तरित ताल अनुसरण गर्छ—एक ताल जुन हतार गर्न सकिँदैन।",
+      "बिहानीको मिर्मिरेमा, भित्तामा बलियो गरी गाडिएको त्यो 'किला' परम्पराको मियो बन्छ। चाकु तान्ने (तनेको) प्रत्येक धक्का र तन्काईमा पुर्खाले सिकाएको लय गुञ्जिन्छ—त्यस्तो लय जसमा हतारको कुनै गुञ्जायस हुँदैन।",
     date: "Maghe Sankranti 2080 B.S.",
     category: "Tradition",
   },
   {
     title: "Why Maghe Sankranti Belongs to Tokha",
-    titleNe: "किन माघे सङ्क्रान्ति टोखाको हो",
+    titleNe: "माघे सङ्क्रान्ति र टोखाको अटूट सम्बन्ध",
     excerpt:
       "Maghe Sankranti marks the peak of Chaku season in Tokha. The cold winter air, the warmth of the fire, and the communal spirit of making Chaku together—this is when Tokha truly comes alive.",
     excerptNe:
-      "माघे सङ्क्रान्तिले टोखामा चाकुको मौसमको चरमोत्कर्षलाई चिन्ह लगाउँछ। चिसो जाडोको हावा, आगोको तातो, र सँगै चाकु बनाउने सामुदायिक भावना—यो टोखा साँच्चै जीवन्त हुने समय हो।",
+      "माघे सङ्क्रान्ति टोखामा चाकु उत्पादनको मुख्य याम हो। जाडोको सिरेटो बिर्साउने आगोको न्यानो र सबै मिलेर चाकु बनाउने त्यो रमाइलो माहोल—यही समयमा टोखा साँच्चै गुल्जार देखिन्छ।",
     date: "Maghe Sankranti 2080 B.S.",
     category: "Festival",
   },
   {
     title: "The Four Generations",
-    titleNe: "चार पुस्ता",
+    titleNe: "चार पुस्ताको विरासत",
     excerpt:
       "From great-grandfather to father, from father to son, and now to the next generation—each has added their touch while preserving the core essence of what makes our Chaku special.",
     excerptNe:
-      "हजुरबाबाबाट बाबामा, बाबाबाट छोरामा, र अब अर्को पुस्तामा—प्रत्येकले आफ्नो स्पर्श थपेका छन्, जबकि हाम्रो चाकुलाई विशेष बनाउने मुख्य सार संरक्षण गर्दै।",
+      "जिजुबाजेदेखि बाजे, बाजेदेखि बुबा र बुबादेखि छोराहरूसम्म—प्रत्येक पुस्ताले चाकुको मौलिक स्वाद र गुणस्तरलाई जोगाउँदै आ-आफ्नो सीप र मेहेनत थपेका छन्।",
     date: "Heritage 2080 B.S.",
     category: "Heritage",
   },
   {
     title: "The Art of Patience",
-    titleNe: "धैर्यको कला",
+    titleNe: "धैर्यताको पाठ",
     excerpt:
       "In a world of instant gratification, Chaku making teaches us the value of patience. Hours of slow pulling, careful attention to temperature, and respect for the process—these are lessons that extend beyond the kitchen.",
     excerptNe:
-      "तत्काल संतुष्टिको संसारमा, चाकु बनाउनेले हामीलाई धैर्यको मूल्य सिकाउँछ। घण्टौंको बिस्तारै तान्ने, तापक्रममा सावधानी, र प्रक्रियाप्रति सम्मान—यी पाठहरू भान्छाबाट टाढा फैलिन्छन्।",
+      "सबै कुरा तुरुन्तै चाहिने आजको हतारोको दुनियाँमा, चाकु बनाउने कलाले हामीलाई धैर्यताको महत्त्व सिकाउँछ। घण्टौंसम्म तान्नुपर्ने धैर्य, तापक्रमको सही सन्तुलन र कामप्रतिको सम्मान—यी पाठहरू भान्छामा मात्र सीमित नभई जीवनमै काम लाग्ने खालका छन्।",
     date: "Wisdom 2080 B.S.",
     category: "Philosophy",
   },
