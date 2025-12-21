@@ -212,7 +212,7 @@ const TokhaChronicles: React.FC = () => {
             <div className="flex items-start justify-between gap-4">
               <p className="text-sm md:text-base leading-relaxed flex-1">
                 <span className="lang-en">The full article and digital records for this chapter will be available here soon.</span>
-                <span className="lang-ne">यस अध्यायको पूर्ण लेख र डिजिटल रेकर्डहरू छिट्टै यहाँ उपलब्ध हुनेछ।</span>
+                <span className="lang-ne">यस अध्यायको पूर्ण लेख र डिजिटल रेकर्डहरू छिट्टै यहाँ उपलब्ध हुनेछन्।</span>
               </p>
               <button
                 onClick={() => setShowToast(false)}
