@@ -1,7 +1,7 @@
 "use client";
 
-import { BookOpen, Calendar } from "lucide-react";
-import React from "react";
+import { BookOpen, Calendar, X } from "lucide-react";
+import React, { useState, useEffect } from "react";
 
 interface Chronicle {
   title: string;
@@ -56,6 +56,28 @@ const chronicles: Chronicle[] = [
 ];
 
 const TokhaChronicles: React.FC = () => {
+  const [showToast, setShowToast] = useState(false);
+
+  const handleReadMore = () => {
+    // Show toast notification
+    setShowToast(true);
+    // Scroll to smarika archive section
+    const smarikaSection = document.getElementById("smarika-archive");
+    if (smarikaSection) {
+      smarikaSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
+  // Auto-hide toast after 5 seconds
+  useEffect(() => {
+    if (showToast) {
+      const timer = setTimeout(() => {
+        setShowToast(false);
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [showToast]);
+
   return (
     <section id="chronicles" className="relative py-24 md:py-32 bg-parchment">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -109,7 +131,10 @@ const TokhaChronicles: React.FC = () => {
                   <Calendar size={16} className="mr-2" />
                   <span>{chronicle.date}</span>
                 </div>
-                <button className="text-hyangu-red font-semibold text-sm hover:underline transition-colors duration-200">
+                <button 
+                  onClick={handleReadMore}
+                  className="text-hyangu-red font-semibold text-sm hover:underline transition-colors duration-200"
+                >
                   Read More →
                 </button>
               </div>
@@ -118,7 +143,7 @@ const TokhaChronicles: React.FC = () => {
         </div>
 
         {/* Archive Announcement Card */}
-        <div className="mt-16 md:mt-20">
+        <div id="smarika-archive" className="mt-16 md:mt-20 scroll-mt-[100px]">
           <article className="relative bg-[#F9F6F0] border-4 border-masi-black p-8 md:p-12 max-w-3xl mx-auto">
             {/* Coming Soon Badge */}
             <div className="absolute top-4 right-4">
@@ -165,6 +190,26 @@ const TokhaChronicles: React.FC = () => {
           </article>
         </div>
       </div>
+
+      {/* Toast Notification */}
+      {showToast && (
+        <div className="fixed top-20 right-4 md:right-8 z-[200] animate-slide-in-right">
+          <div className="bg-masi-black text-parchment p-4 md:p-6 rounded-lg shadow-2xl border-l-4 border-hyangu-red max-w-sm">
+            <div className="flex items-start justify-between gap-4">
+              <p className="text-sm md:text-base leading-relaxed flex-1">
+                The full article and digital records for this chapter will be available here soon.
+              </p>
+              <button
+                onClick={() => setShowToast(false)}
+                className="text-parchment/70 hover:text-parchment transition-colors flex-shrink-0"
+                aria-label="Close notification"
+              >
+                <X size={20} />
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

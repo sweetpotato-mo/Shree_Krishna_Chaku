@@ -17,9 +17,9 @@ export function Favicon() {
       // Remove existing favicon links (but keep other links intact)
       const existingFavicons = document.querySelectorAll('link[rel="icon"], link[rel="apple-touch-icon"]');
       existingFavicons.forEach(link => {
-        // Only remove if it's pointing to LOGO_White.png
+        // Only remove if it's pointing to LOGO_White.png or GoldLogo copy_No_BG.png
         const href = link.getAttribute('href');
-        if (href && href.includes('LOGO_White')) {
+        if (href && (href.includes('LOGO_White') || href.includes('GoldLogo copy_No_BG'))) {
           link.remove();
         }
       });
@@ -28,13 +28,13 @@ export function Favicon() {
       const faviconLink = document.createElement('link');
       faviconLink.rel = 'icon';
       faviconLink.type = 'image/png';
-      faviconLink.href = `${basePath}/LOGO_White.png`;
+      faviconLink.href = `${basePath}/${encodeURIComponent('GoldLogo copy_No_BG.png')}`;
       document.head.appendChild(faviconLink);
 
       // Create and add apple touch icon
       const appleLink = document.createElement('link');
       appleLink.rel = 'apple-touch-icon';
-      appleLink.href = `${basePath}/LOGO_White.png`;
+      appleLink.href = `${basePath}/${encodeURIComponent('GoldLogo copy_No_BG.png')}`;
       document.head.appendChild(appleLink);
     }, 100);
   }, []);

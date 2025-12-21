@@ -8,8 +8,8 @@ export const metadata: Metadata = {
   description:
     "A 4th-generation artisanal Chaku production from Tokha-3, Dekwo, Kathmandu. Traditionally crafted, SO2 free, no added colors or preservatives.",
   icons: {
-    icon: "/LOGO_White.png",
-    apple: "/LOGO_White.png",
+    icon: "/GoldLogo%20copy_No_BG.png",
+    apple: "/GoldLogo%20copy_No_BG.png",
   },
 };
 
