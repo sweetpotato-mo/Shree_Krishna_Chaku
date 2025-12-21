@@ -114,7 +114,7 @@ const ProductShowcase: React.FC = () => {
             <div className="flex items-start justify-between gap-4">
               <p className="text-sm md:text-base leading-relaxed flex-1">
                 <span className="lang-en">The detailed ritual guide for this variety is being curated and is not available yet. In the meantime, feel free to contact us regarding your requirements using the form below.</span>
-                <span className="lang-ne">यस किसिमको विस्तृत अनुष्ठान गाइड हालैमा तयार गरिँदैछ र अझै उपलब्ध छैन। यसै बीचमा, तलको फर्म प्रयोग गरेर तपाईंको आवश्यकताहरूको बारेमा हामीलाई सम्पर्क गर्न स्वतन्त्र महसुस गर्नुहोस्।</span>
+                <span className="lang-ne">यो खण्ड हाल निर्माणधिन छ। केही सोधपुछ भएमा कृपया तलको फारम प्रयोग गर्नुहोला।</span>
               </p>
               <button
                 onClick={() => setShowToast(false)}
@@ -135,7 +135,7 @@ const ProductShowcase: React.FC = () => {
           </h2>
           <p className="heading-serif text-lg text-masi-black/90 italic max-w-2xl mx-auto">
             <span className="lang-en font-medium">A curated selection of varieties, each crafted with the same dedication to tradition and purity.</span>
-            <span className="lang-ne">परम्परा र शुद्धताप्रति उत्तिकै समर्पित भई तयार पारिएका छानिएका उत्पादनहरू।</span>
+            <span className="lang-ne font-medium">परम्परा र शुद्धताप्रति उत्तिकै समर्पित भई तयार पारिएका  उत्पादनहरू :</span>
           </p>
         </div>
 
