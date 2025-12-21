@@ -90,6 +90,13 @@ const Hero: React.FC = () => {
     }
   };
 
+  const scrollToContact = () => {
+    const element = document.getElementById("footer");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="relative h-screen w-full overflow-hidden">
       {/* Video Background */}
@@ -161,12 +168,20 @@ const Hero: React.FC = () => {
             A 4th-generation artisanal tradition from Tokha-3, Dekwo, Kathmandu
           </p>
 
-          <button
-            onClick={scrollToNext}
-            className="px-8 py-4 bg-hyangu-red text-parchment rounded-none border-2 border-parchment hover:bg-parchment hover:text-hyangu-red transition-all duration-300 font-semibold text-lg tracking-wide"
-          >
-            Explore the Lineage
-          </button>
+          <div className="flex flex-col items-center gap-4">
+            <button
+              onClick={scrollToNext}
+              className="px-8 py-4 bg-hyangu-red text-parchment rounded-none border-2 border-parchment hover:bg-parchment hover:text-hyangu-red transition-all duration-300 font-semibold text-lg tracking-wide"
+            >
+              Explore the Lineage
+            </button>
+            <button
+              onClick={scrollToContact}
+              className="px-8 py-4 bg-transparent text-parchment rounded-none border-2 border-parchment/70 hover:border-parchment hover:bg-parchment/10 transition-all duration-300 font-semibold text-lg tracking-wide"
+            >
+              Contact Us
+            </button>
+          </div>
         </div>
 
         {/* Scroll Indicator */}
