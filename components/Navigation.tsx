@@ -105,7 +105,7 @@ const Navigation: React.FC = () => {
             className="flex items-center gap-3 focus:outline-none flex-shrink-0"
           >
             {/* Logo - enhanced visibility on dark background */}
-            <div className="relative h-10 sm:h-12 md:h-14 w-auto">
+            <div className="relative h-12 sm:h-12 md:h-14 w-auto">
               <Image
                 src={getAssetPath("/GoldLogo.jpeg")}
                 alt="Shree Krishna Tokha Chaku"
@@ -120,13 +120,13 @@ const Navigation: React.FC = () => {
             </div>
             {/* Brand Text in Antique Gold - visible on all screens, wraps on mobile */}
             <span className="heading-serif text-xs sm:text-lg md:text-xl lg:text-2xl text-antique-gold leading-tight">
-              <span className="lang-en">
-                <span className="block sm:inline">Shree Krishna</span>
-                <span className="block sm:inline sm:ml-1">Tokha Chaku</span>
+              <span className="lang-en whitespace-nowrap text-sm sm:text-lg md:text-xl lg:text-2xl">
+                <span className="inline">Shree Krishna </span>
+                <span className="inline">Tokha Chaku</span>
               </span>
-              <span className="lang-ne">
-                <span className="block sm:inline">श्री कृष्ण</span>
-                <span className="block sm:inline sm:ml-1">टोखा चाकु</span>
+              <span className="lang-ne whitespace-nowrap text-sm sm:text-lg md:text-xl lg:text-2xl">
+                <span className="inline">श्री कृष्ण </span>
+                <span className="inline">टोखा चाकु</span>
               </span>
             </span>
           </button>
