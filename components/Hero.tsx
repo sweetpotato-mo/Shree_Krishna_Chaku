@@ -168,7 +168,7 @@ const Hero: React.FC = () => {
               टोखाको मौलिकता,
               <br />
               <span className="text-antique-gold">
-                चार पुस्ताको निखार
+                चार पुस्ताको पौरख
               </span>
             </span>
           </h1>

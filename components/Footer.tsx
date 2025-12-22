@@ -34,15 +34,48 @@ const Footer: React.FC = () => {
                 <span className="lang-ne">काठमाडौँ, नेपाल</span>
               </p>
             </div>
-            <a
-              href="https://maps.app.goo.gl/cE3QnE9E4f8wiuxf9"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-hyangu-red hover:bg-hyangu-red/90 text-parchment px-6 py-3 rounded-none font-semibold transition-all duration-300 border-2 border-parchment/20 hover:border-parchment/40 mt-6"
-            >
-              <span className="lang-en">Open in Google Maps</span>
-              <span className="lang-ne">गुगल म्याप्समा खोल्नुहोस्</span>
-            </a>
+            <div className="flex flex-col md:flex-row items-start md:items-center gap-4 mt-6">
+              <a
+                href="https://maps.app.goo.gl/cE3QnE9E4f8wiuxf9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-fit text-parchment px-6 py-3 rounded-none font-semibold transition-all duration-300 text-center whitespace-nowrap border hover:shadow-lg hover:shadow-red-900/20"
+                style={{
+                  background: "linear-gradient(to bottom, #911a13, #7a150f)",
+                  borderWidth: "1px",
+                  borderColor: "rgba(212, 175, 55, 0.4)",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = "linear-gradient(to bottom, #a82a1f, #8b1a13)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = "linear-gradient(to bottom, #911a13, #7a150f)";
+                }}
+              >
+                <span className="lang-en">Open in Google Maps</span>
+                <span className="lang-ne">गुगल म्याप्समा खोल्नुहोस्</span>
+              </a>
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdftlwL_fdx5JvlY_ESCHmx3pDvDL-j8FTexv1vxM_HAr9eGQ/viewform?usp=sharing&ouid=108440557764622866401"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-fit text-parchment px-6 py-3 rounded-none font-semibold transition-all duration-300 text-center whitespace-nowrap border hover:shadow-lg hover:shadow-red-900/20"
+                style={{
+                  background: "linear-gradient(to bottom, #911a13, #7a150f)",
+                  borderWidth: "1px",
+                  borderColor: "rgba(212, 175, 55, 0.4)",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = "linear-gradient(to bottom, #a82a1f, #8b1a13)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = "linear-gradient(to bottom, #911a13, #7a150f)";
+                }}
+              >
+                <span className="lang-en">Open Inquiry Form</span>
+                <span className="lang-ne">सोधपुछ फारम खोल्नुहोस्</span>
+              </a>
+            </div>
           </div>
 
           {/* Right: Contact Details */}

@@ -245,7 +245,7 @@ const ProductShowcase: React.FC = () => {
         <div className="text-center border-t-2 border-hyangu-red/30 pt-8 mt-8">
           <p className="text-masi-black/70 text-sm tracking-wide uppercase">
             <span className="lang-en">Traditionally Crafted. SO<sub>2</sub> Free. No Added Colors or Preservatives.</span>
-            <span className="lang-ne">परम्परागत विधिबाट उत्पादित। SO<sub>2</sub> (सल्फर) मुक्त। कुनै अतिरिक्त रङ्ग वा संरक्षक तत्व नभएको।</span>
+            <span className="lang-ne">परम्परागत विधिबाट उत्पादित। SO<sub>2</sub> मुक्त। कुनै अतिरिक्त रङ्ग वा संरक्षक तत्व नभएको।</span>
           </p>
         </div>
       </div>
