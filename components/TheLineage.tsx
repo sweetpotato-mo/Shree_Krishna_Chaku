@@ -53,7 +53,7 @@ const TheLineage: React.FC = () => {
                 <span className="lang-en">
                   Our journey began in the heart of Tokha-3, Dekwo, where the
                   rhythm of the Keela (wooden hook) and the slow, deliberate
-                  process of Taneko (pulling) Chaku became synonymous with our
+                  process of aerating (फिट्नु) Chaku became synonymous with our
                   name. Each batch is crafted with the same care and attention
                   that our ancestors brought to this sacred art.
                 </span>
