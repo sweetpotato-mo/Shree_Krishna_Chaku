@@ -1,7 +1,7 @@
 "use client";
 
+import { getAssetPath } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
-import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 
 const Navigation: React.FC = () => {
@@ -108,13 +108,12 @@ const Navigation: React.FC = () => {
           >
             {/* Logo - enhanced visibility on dark background */}
             <div className="relative h-12 sm:h-12 md:h-14 w-auto">
-              <Image
-                src="/GoldLogo.jpeg"
+              <img
+                src={getAssetPath("/GoldLogo.jpeg")}
                 alt="Shree Krishna Tokha Chaku"
                 width={56}
                 height={56}
                 className="h-full w-auto object-contain brightness-125 contrast-110"
-                priority
                 style={{
                   filter: "brightness(1.25) contrast(1.1)",
                 }}
