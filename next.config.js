@@ -9,6 +9,7 @@ const nextConfig = {
   ...(process.env.NODE_ENV === "production" && {
     output: "export",
     basePath: "/Shree_Krishna_Chaku",
+    assetPrefix: "/Shree_Krishna_Chaku",
     trailingSlash: true,
   }),
 };
