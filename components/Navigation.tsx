@@ -107,7 +107,7 @@ const Navigation: React.FC = () => {
             {/* Logo - enhanced visibility on dark background */}
             <div className="relative h-12 sm:h-12 md:h-14 w-auto">
               <Image
-                src={getAssetPath("/GoldLogo.jpeg")}
+                src="/GoldLogo.jpeg"
                 alt="Shree Krishna Tokha Chaku"
                 width={56}
                 height={56}
