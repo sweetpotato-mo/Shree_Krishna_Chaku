@@ -83,6 +83,23 @@ const products: Product[] = [
 
 const ProductShowcase: React.FC = () => {
   const [showToast, setShowToast] = useState(false);
+  const [productImagePaths, setProductImagePaths] = useState<Record<string, string>>(() => {
+    const paths: Record<string, string> = {};
+    products.forEach((product) => {
+      paths[product.name] = getAssetPath(product.image || "/placeholder-chaku.jpg");
+    });
+    return paths;
+  });
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const paths: Record<string, string> = {};
+      products.forEach((product) => {
+        paths[product.name] = getAssetPath(product.image || "/placeholder-chaku.jpg");
+      });
+      setProductImagePaths(paths);
+    }
+  }, []);
 
   const handleDiscoverRitual = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -149,7 +166,7 @@ const ProductShowcase: React.FC = () => {
               <div className="relative h-64 bg-gradient-to-br from-masi-black via-hyangu-red/20 to-masi-black overflow-hidden">
                 <div 
                   className="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-500" 
-                  style={{ backgroundImage: `url(${getAssetPath(product.image || '/placeholder-chaku.jpg')})` }}
+                  style={{ backgroundImage: `url(${productImagePaths[product.name] || getAssetPath(product.image || '/placeholder-chaku.jpg')})` }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-masi-black/60 via-transparent to-transparent" />
               </div>

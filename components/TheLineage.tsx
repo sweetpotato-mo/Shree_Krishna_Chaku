@@ -2,9 +2,19 @@
 
 import { getAssetPath } from "@/lib/utils";
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const TheLineage: React.FC = () => {
+  const [factoryImageSrc, setFactoryImageSrc] = useState<string>(() =>
+    getAssetPath("/factory-tokha.jpg")
+  );
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setFactoryImageSrc(getAssetPath("/factory-tokha.jpg"));
+    }
+  }, []);
+
   return (
     <section id="lineage" className="relative py-24 md:py-32 bg-parchment">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -15,7 +25,7 @@ const TheLineage: React.FC = () => {
               <div
                 className="w-full h-full bg-cover bg-center"
                 style={{
-                  backgroundImage: `url(${getAssetPath("/factory-tokha.jpg")})`,
+                  backgroundImage: `url(${factoryImageSrc})`,
                   filter: "sepia(0.1) contrast(1.1) brightness(0.95)",
                   backdropFilter: "blur(8px)",
                 }}

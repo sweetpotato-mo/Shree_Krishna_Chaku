@@ -7,8 +7,18 @@ import React, { useEffect, useRef, useState } from "react";
 const Navigation: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [language, setLanguage] = useState<"en" | "ne">("ne");
+  const [logoSrc, setLogoSrc] = useState<string>(() =>
+    getAssetPath("/GoldLogo.jpeg")
+  );
   const desktopToggleRef = useRef<HTMLDivElement>(null);
   const mobileToggleRef = useRef<HTMLDivElement>(null);
+
+  // Update logo source based on environment (client-side)
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setLogoSrc(getAssetPath("/GoldLogo.jpeg"));
+    }
+  }, []);
 
   // Load language preference from localStorage on mount
   useEffect(() => {
@@ -109,7 +119,7 @@ const Navigation: React.FC = () => {
             {/* Logo - enhanced visibility on dark background */}
             <div className="relative h-12 sm:h-12 md:h-14 w-auto">
               <img
-                src={getAssetPath("/GoldLogo.jpeg")}
+                src={logoSrc}
                 alt="Shree Krishna Tokha Chaku"
                 width={56}
                 height={56}
