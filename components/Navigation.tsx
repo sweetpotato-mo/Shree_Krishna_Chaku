@@ -1,9 +1,8 @@
 "use client";
 
-import { getAssetPath } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const Navigation: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -13,7 +12,10 @@ const Navigation: React.FC = () => {
 
   // Load language preference from localStorage on mount
   useEffect(() => {
-    const savedLanguage = localStorage.getItem("language") as "en" | "ne" | null;
+    const savedLanguage = localStorage.getItem("language") as
+      | "en"
+      | "ne"
+      | null;
     // Default to Nepali if no saved language or if saved language is 'ne'
     // Only use English if explicitly set to 'en'
     if (savedLanguage === "en") {
@@ -145,7 +147,10 @@ const Navigation: React.FC = () => {
             ))}
 
             {/* Language Toggle - Desktop */}
-            <div ref={desktopToggleRef} className="flex items-center space-x-1 border-l border-parchment/20 pl-4 ml-4">
+            <div
+              ref={desktopToggleRef}
+              className="flex items-center space-x-1 border-l border-parchment/20 pl-4 ml-4"
+            >
               <button
                 onClick={() => handleLanguageChange("en")}
                 className={`px-3 py-1.5 text-sm font-medium transition-colors ${

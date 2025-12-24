@@ -4,7 +4,8 @@ import "./globals.css";
 
 // For production builds (GitHub Pages), basePath is /Shree_Krishna_Chaku
 // For development, basePath is empty
-const basePath = process.env.NODE_ENV === "production" ? "/Shree_Krishna_Chaku" : "";
+const basePath =
+  process.env.NODE_ENV === "production" ? "/Shree_Krishna_Chaku" : "";
 const iconPath = `${basePath}/GoldLogo%20copy_No_BG.png`;
 
 export const metadata: Metadata = {

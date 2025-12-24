@@ -6,7 +6,8 @@ import React, { useEffect, useRef, useState } from "react";
 
 const Hero: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [videoSrc, setVideoSrc] = useState<string>("/chaku-pulling.mp4");
+  // Initialize with correct path from the start
+  const [videoSrc, setVideoSrc] = useState<string>(() => getAssetPath("/chaku-pulling.mp4"));
   const [isMobile, setIsMobile] = useState(false);
   const [showFallback, setShowFallback] = useState(false);
 
@@ -27,8 +28,10 @@ const Hero: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    // Set video source based on environment
-    setVideoSrc(getAssetPath("/chaku-pulling.mp4"));
+    // Update video source based on environment (client-side)
+    if (typeof window !== "undefined") {
+      setVideoSrc(getAssetPath("/chaku-pulling.mp4"));
+    }
   }, []);
 
   useEffect(() => {
