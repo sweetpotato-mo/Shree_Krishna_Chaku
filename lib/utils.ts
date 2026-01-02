@@ -18,18 +18,35 @@ export function getAssetPath(path: string): string {
 
     // Always use relative paths for localhost (including when serving built files)
     if (hostname === "localhost" || hostname === "127.0.0.1" || hostname === "0.0.0.0") {
+      // Remove basePath if it's already in the path (from build with basePath)
+      if (cleanPath.startsWith(BASE_PATH)) {
+        return cleanPath.substring(BASE_PATH.length);
+      }
       return cleanPath;
     }
 
-    // For GitHub Pages (github.io domain) or if pathname starts with basePath, add basePath
+    // For GitHub Pages (github.io domain) or if pathname starts with basePath
     if (hostname.includes("github.io") || pathname.startsWith(BASE_PATH)) {
+      // Don't add basePath if it's already in the path
+      if (cleanPath.startsWith(BASE_PATH)) {
+        return cleanPath;
+      }
       return `${BASE_PATH}${cleanPath}`;
     }
   }
 
-  // Server-side/build-time: default to relative path
-  // This ensures local builds work correctly
-  // Only add basePath if explicitly needed for GitHub Pages deployment
+  // Server-side/build-time: check if USE_BASE_PATH is set
+  // If building with basePath, return path with basePath
+  // Otherwise return relative path
+  if (typeof process !== "undefined" && process.env.USE_BASE_PATH === "true") {
+    // Don't add basePath if it's already in the path
+    if (cleanPath.startsWith(BASE_PATH)) {
+      return cleanPath;
+    }
+    return `${BASE_PATH}${cleanPath}`;
+  }
+
+  // Default: return relative path (for local builds)
   return cleanPath;
 }
 
