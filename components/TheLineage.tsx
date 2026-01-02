@@ -52,11 +52,15 @@ const TheLineage: React.FC = () => {
                   Rooted in a four-generation family craft and officially
                   registered in 2063 B.S., Shree Krishna Chaku Production is a
                   protector of Tokha&apos;s ancestral taste. Our family has
-                  dedicated itself to preserving the traditional methods of Chaku
-                  making, passed down through the ages.
+                  dedicated itself to preserving the traditional methods of
+                  Chaku making, passed down through the ages.
                 </span>
                 <span className="lang-ne">
-                  चार पुस्तादेखि चलिआएको पारिवारिक सीपमा आधारित र वि.सं. २०६३ मा आधिकारिक रूपमा दर्ता भएको &apos;श्री कृष्ण चाकु प्रोडक्सन&apos; टोखाको पुर्ख्यौली स्वादको संरक्षक हो। हाम्रो परिवार पुस्तौंदेखि हस्तान्तरण हुँदै आएको चाकु बनाउने परम्परागत विधिलाई जोगाउन पूर्ण रूपमा समर्पित छ।
+                  चार पुस्तादेखि चलिआएको पारिवारिक सीपमा आधारित र वि.सं. २०६३ मा
+                  आधिकारिक रूपमा दर्ता भएको &apos;श्री कृष्ण चाकु
+                  प्रोडक्सन&apos; टोखाको पुर्ख्यौली स्वादको संरक्षक हो। हाम्रो
+                  परिवार पुस्तौंदेखि हस्तान्तरण हुँदै आएको चाकु बनाउने परम्परागत
+                  विधिलाई जोगाउन पूर्ण रूपमा समर्पित छ।
                 </span>
               </p>
               <p>
@@ -68,7 +72,11 @@ const TheLineage: React.FC = () => {
                   that our ancestors brought to this sacred art.
                 </span>
                 <span className="lang-ne">
-                  हाम्रो यात्रा टोखा-३, देक्वोको मुटुबाट सुरु भएको हो, जहाँ &apos;किला&apos; (काठको हुक) को ताल र चाकु तान्ने धैर्यपूर्ण प्रक्रिया नै हाम्रो पहिचान बन्यो। प्रत्येक ब्याच त्यही आत्मीयता र सावधानीका साथ तयार गरिन्छ जुन हाम्रा पुर्खाहरूले यस पवित्र कलामा भर्थे।
+                  हाम्रो यात्रा टोखा-३, देक्वोको मुटुबाट सुरु भएको हो, जहाँ
+                  &apos;किला&apos; (काठको हुक) को ताल र चाकु तान्ने धैर्यपूर्ण
+                  प्रक्रिया नै हाम्रो पहिचान बन्यो। प्रत्येक ब्याच त्यही
+                  आत्मीयता र सावधानीका साथ तयार गरिन्छ जुन हाम्रा पुर्खाहरूले यस
+                  पवित्र कलामा भर्थे।
                 </span>
               </p>
               <p>
@@ -82,8 +90,8 @@ const TheLineage: React.FC = () => {
                   >
                     Tokha Traditional Chaku Conservation Society
                   </a>
-                  , we are committed to maintaining the purity and authenticity of
-                  this time-honored tradition. Our Chaku is SO2 free, with no
+                  , we are committed to maintaining the purity and authenticity
+                  of this time-honored tradition. Our Chaku is SO2 free, with no
                   added colors or preservatives— just pure, traditional
                   craftsmanship.
                 </span>
@@ -96,8 +104,11 @@ const TheLineage: React.FC = () => {
                     className="font-semibold text-masi-black border-b border-masi-black/30 hover:text-hyangu-red hover:border-hyangu-red/70 transition-all duration-300 ease-in-out"
                   >
                     &apos;टोखा परम्परागत चाकु संरक्षण समाज&apos;
-                  </a>
-                  {" "}को गर्विलो सदस्यका रूपमा हामी यस ऐतिहासिक परम्पराको शुद्धता र मौलिकता कायम राख्न प्रतिबद्ध छौं। हाम्रो चाकु SO<sub>2</sub> मुक्त छ र कुनै अतिरिक्त रङ्ग वा संरक्षक तत्वहरू मिसाइएको छैन—यो केवल शुद्ध र परम्परागत हस्तकलाको उपज हो।
+                  </a>{" "}
+                  को गर्विलो सदस्यका रूपमा हामी यस ऐतिहासिक परम्पराको शुद्धता र
+                  मौलिकता कायम राख्न प्रतिबद्ध छौं। हाम्रो चाकु SO<sub>2</sub>{" "}
+                  मुक्त छ र कुनै अतिरिक्त रङ्ग वा संरक्षक तत्वहरू मिसाइएको
+                  छैन—यो केवल शुद्ध र परम्परागत हस्तकलाको उपज हो।
                 </span>
               </p>
             </div>
@@ -138,8 +149,14 @@ const TheLineage: React.FC = () => {
                 </svg>
               </div>
               <p className="heading-serif text-masi-black/60 text-sm italic leading-relaxed text-center">
-                <span className="lang-en text-masi-black/90 font-medium">The complete story of Tokha, the heritage of Chaku, and the legacy of Shree Krishna Chaku will be unveiled here soon.</span>
-                <span className="lang-ne text-masi-black/90 font-medium">टोखाको पूर्ण कथा, चाकुको इतिहास र श्री कृष्ण चाकुको विरासत चाँडै यहाँ प्रस्तुत गरिनेछ।</span>
+                <span className="lang-en text-masi-black/90 font-medium">
+                  The complete story of Tokha, the heritage of Chaku, and the
+                  legacy of Shree Krishna Chaku will be unveiled here soon.
+                </span>
+                <span className="lang-ne text-masi-black/90 font-medium">
+                  टोखाको पूर्ण कथा, चाकुको इतिहास र श्री कृष्ण चाकुको विरासत
+                  चाँडै यहाँ प्रस्तुत गरिनेछ।
+                </span>
               </p>
             </motion.div>
           </div>

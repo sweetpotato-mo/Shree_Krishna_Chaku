@@ -152,14 +152,6 @@ const TokhaChronicles: React.FC = () => {
         {/* Archive Announcement Card */}
         <div id="smarika-archive" className="mt-16 md:mt-20 scroll-mt-[100px]">
           <article className="relative bg-[#F9F6F0] border-4 border-masi-black p-8 md:p-12 max-w-3xl mx-auto">
-            {/* Coming Soon Badge */}
-            <div className="absolute top-4 right-4">
-              <span className="bg-hyangu-red text-parchment text-xs uppercase tracking-wider font-semibold px-3 py-1.5">
-                <span className="lang-en">Coming Soon</span>
-                <span className="lang-ne">चाँडै आउँदैछ</span>
-              </span>
-            </div>
-
             {/* Book Icon */}
             <div className="flex justify-center mb-6">
               <svg
@@ -188,19 +180,32 @@ const TokhaChronicles: React.FC = () => {
             </h3>
 
             {/* Body Text */}
-            <p className="text-masi-black/80 leading-relaxed text-base md:text-lg text-center max-w-2xl mx-auto">
+            <p className="text-masi-black/80 leading-relaxed text-base md:text-lg text-center max-w-2xl mx-auto mb-8">
               <span className="lang-en">
-                The wisdom of Tokha is being preserved for the digital age. A
+                The wisdom of Tokha has been preserved for the digital age. A
                 curated selection of printed articles from the Chaku Smarika (2078
-                B.S.) will soon be available here. This collection features deep
+                B.S.) is now available digitally. This collection features deep
                 insights on the history, culture, and future prospects of Tokha
                 and Chaku from influential Newa: personalities who relate to Tokha
                 and the broader Newa: culture.
               </span>
               <span className="lang-ne">
-                टोखाको ज्ञानलाई डिजिटल युगका लागि सुरक्षित गरिँदैछ। चाकु स्मारिका (२०७८) बाट छानिएका लेखहरू चाँडै यहाँ उपलब्ध हुनेछन्। यस संग्रहमा टोखा र नेवारी संस्कृतिसँग जोडिएका व्यक्तित्वहरूद्वारा लेखिएका टोखाको इतिहास, संस्कृति र भविष्यका सम्भावनाहरू बारे गहन अन्तर्दृष्टिहरू समावेश छन्।
+                टोखाको ज्ञानलाई डिजिटल युगका लागि सुरक्षित गरिएको छ। चाकु स्मारिका (२०७८) बाट छानिएका लेखहरू अब डिजिटल रूपमा उपलब्ध छन्। यस संग्रहमा टोखा र नेवारी संस्कृतिसँग जोडिएका व्यक्तित्वहरूद्वारा लेखिएका टोखाको इतिहास, संस्कृति र भविष्यका सम्भावनाहरू बारे गहन अन्तर्दृष्टिहरू समावेश छन्।
               </span>
             </p>
+
+            {/* CTA Button */}
+            <div className="flex justify-center">
+              <a
+                href="https://smarika.tokhachaku.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-8 md:px-12 py-4 md:py-5 bg-hyangu-red text-parchment font-bold uppercase tracking-wide md:tracking-[0.15em] rounded-none border-2 border-hyangu-red shadow-lg transition-all duration-300 hover:bg-parchment hover:text-hyangu-red hover:scale-105 text-base md:text-lg"
+              >
+                <span className="lang-en">Read Digitally</span>
+                <span className="lang-ne">डिजिटल स्मारिका पढ्नुहोस्</span>
+              </a>
+            </div>
           </article>
         </div>
       </div>

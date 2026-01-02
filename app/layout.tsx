@@ -2,11 +2,8 @@ import { Favicon } from "@/components/Favicon";
 import type { Metadata } from "next";
 import "./globals.css";
 
-// For production builds (GitHub Pages), basePath is /Shree_Krishna_Chaku
-// For development, basePath is empty
-const basePath =
-  process.env.NODE_ENV === "production" ? "/Shree_Krishna_Chaku" : "";
-const iconPath = `${basePath}/GoldLogo%20copy_No_BG.png`;
+// Use relative path for icons - works for both localhost and GitHub Pages
+const iconPath = "/GoldLogo%20copy_No_BG.png";
 
 export const metadata: Metadata = {
   title:

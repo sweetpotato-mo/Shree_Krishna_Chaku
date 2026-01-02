@@ -1,31 +1,22 @@
 "use client";
 
 import { getAssetPath } from "@/lib/utils";
-import { Menu, X } from "lucide-react";
-import React, { useEffect, useRef, useState } from "react";
+import { Menu, X, ChevronDown } from "lucide-react";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+import React, { useState, useEffect, useRef } from "react";
 
 const Navigation: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [language, setLanguage] = useState<"en" | "ne">("ne");
-  const [logoSrc, setLogoSrc] = useState<string>(() =>
-    getAssetPath("/GoldLogo.jpeg")
-  );
+  const [isArchiveDropdownOpen, setIsArchiveDropdownOpen] = useState(false);
   const desktopToggleRef = useRef<HTMLDivElement>(null);
   const mobileToggleRef = useRef<HTMLDivElement>(null);
-
-  // Update logo source based on environment (client-side)
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setLogoSrc(getAssetPath("/GoldLogo.jpeg"));
-    }
-  }, []);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Load language preference from localStorage on mount
   useEffect(() => {
-    const savedLanguage = localStorage.getItem("language") as
-      | "en"
-      | "ne"
-      | null;
+    const savedLanguage = localStorage.getItem("language") as "en" | "ne" | null;
     // Default to Nepali if no saved language or if saved language is 'ne'
     // Only use English if explicitly set to 'en'
     if (savedLanguage === "en") {
@@ -86,8 +77,23 @@ const Navigation: React.FC = () => {
   const navItems = [
     { en: "Our Story", ne: "हाम्रो कथा", id: "lineage" },
     { en: "Products", ne: "उत्पादनहरू", id: "products" },
-    { en: "Tokha Chronicles", ne: "टोखा वृत्तान्त", id: "chronicles" },
     { en: "Contact Us", ne: "सम्पर्क", id: "footer" },
+  ];
+
+  // Archive dropdown items
+  const archiveDropdownItems = [
+    {
+      en: "Heritage Stories",
+      ne: "कथाहरू",
+      id: "chronicles",
+      isExternal: false,
+    },
+    {
+      en: "Digital Smarika 2078",
+      ne: "डिजिटल स्मारिका २०७८",
+      href: "https://smarika.tokhachaku.com",
+      isExternal: true,
+    },
   ];
 
   const scrollToSection = (id: string) => {
@@ -95,8 +101,29 @@ const Navigation: React.FC = () => {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
       setIsMobileMenuOpen(false);
+      setIsArchiveDropdownOpen(false);
     }
   };
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsArchiveDropdownOpen(false);
+      }
+    };
+
+    if (isArchiveDropdownOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isArchiveDropdownOpen]);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -118,12 +145,13 @@ const Navigation: React.FC = () => {
           >
             {/* Logo - enhanced visibility on dark background */}
             <div className="relative h-12 sm:h-12 md:h-14 w-auto">
-              <img
-                src={logoSrc}
+              <Image
+                src={getAssetPath("/GoldLogo.jpeg")}
                 alt="Shree Krishna Tokha Chaku"
                 width={56}
                 height={56}
                 className="h-full w-auto object-contain brightness-125 contrast-110"
+                priority
                 style={{
                   filter: "brightness(1.25) contrast(1.1)",
                 }}
@@ -155,11 +183,72 @@ const Navigation: React.FC = () => {
               </button>
             ))}
 
-            {/* Language Toggle - Desktop */}
+            {/* Archive Dropdown - Desktop */}
             <div
-              ref={desktopToggleRef}
-              className="flex items-center space-x-1 border-l border-parchment/20 pl-4 ml-4"
+              ref={dropdownRef}
+              className="relative"
+              onMouseEnter={() => setIsArchiveDropdownOpen(true)}
+              onMouseLeave={() => setIsArchiveDropdownOpen(false)}
             >
+              <button
+                className="nepali-text text-parchment/90 hover:text-parchment relative transition-colors duration-200 font-medium text-sm tracking-wide group flex items-center gap-1"
+              >
+                <span>
+                  <span className="lang-en">Chaku Archive</span>
+                  <span className="lang-ne">चकु स्मारिका</span>
+                </span>
+                <ChevronDown
+                  size={16}
+                  className={`transition-transform duration-200 ${
+                    isArchiveDropdownOpen ? "rotate-180" : ""
+                  }`}
+                />
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-antique-gold transition-all duration-200 group-hover:w-full"></span>
+              </button>
+
+              {/* Dropdown Menu */}
+              <AnimatePresence>
+                {isArchiveDropdownOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.2, ease: "easeOut" }}
+                    className="absolute top-full left-0 mt-2 w-56 bg-masi-black border border-parchment/20 shadow-xl z-50"
+                  >
+                    {archiveDropdownItems.map((item, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.2, delay: index * 0.05 }}
+                      >
+                        {item.isExternal ? (
+                          <a
+                            href={item.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block px-4 py-3 text-parchment/90 hover:text-parchment hover:bg-parchment/10 transition-colors duration-200 text-sm border-b border-parchment/10 last:border-b-0"
+                          >
+                            {language === "en" ? item.en : item.ne}
+                          </a>
+                        ) : (
+                          <button
+                            onClick={() => scrollToSection(item.id!)}
+                            className="block w-full text-left px-4 py-3 text-parchment/90 hover:text-parchment hover:bg-parchment/10 transition-colors duration-200 text-sm border-b border-parchment/10 last:border-b-0"
+                          >
+                            {language === "en" ? item.en : item.ne}
+                          </button>
+                        )}
+                      </motion.div>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {/* Language Toggle - Desktop */}
+            <div ref={desktopToggleRef} className="flex items-center space-x-1 border-l border-parchment/20 pl-4 ml-4">
               <button
                 onClick={() => handleLanguageChange("en")}
                 className={`px-3 py-1.5 text-sm font-medium transition-colors ${
@@ -235,6 +324,65 @@ const Navigation: React.FC = () => {
                 {language === "en" ? item.en : item.ne}
               </button>
             ))}
+
+            {/* Archive Dropdown - Mobile */}
+            <div className="space-y-2">
+              <button
+                onClick={() => setIsArchiveDropdownOpen(!isArchiveDropdownOpen)}
+                className="flex items-center justify-between w-full text-left text-parchment/90 hover:text-parchment simple-hover py-2"
+              >
+                <span>
+                  <span className="lang-en">Chaku Archive</span>
+                  <span className="lang-ne">चकु स्मारिका</span>
+                </span>
+                <ChevronDown
+                  size={16}
+                  className={`transition-transform duration-200 ${
+                    isArchiveDropdownOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+
+              <AnimatePresence>
+                {isArchiveDropdownOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.2, ease: "easeOut" }}
+                    className="pl-4 space-y-2 border-l border-parchment/20 overflow-hidden"
+                  >
+                    {archiveDropdownItems.map((item, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.2, delay: index * 0.05 }}
+                      >
+                        {item.isExternal ? (
+                          <a
+                            href={item.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            className="block text-parchment/70 hover:text-parchment simple-hover py-2 text-sm"
+                          >
+                            {language === "en" ? item.en : item.ne}
+                          </a>
+                        ) : (
+                          <button
+                            onClick={() => scrollToSection(item.id!)}
+                            className="block w-full text-left text-parchment/70 hover:text-parchment simple-hover py-2 text-sm"
+                          >
+                            {language === "en" ? item.en : item.ne}
+                          </button>
+                        )}
+                      </motion.div>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
           </div>
         </div>
       )}
